@@ -3,32 +3,37 @@ import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import { FaAngleRight, FaAngleLeft, FaCircle, FaRegCircle } from 'react-icons/fa';
 import Button from 'react-bootstrap/Button'
-import { useState, MouseEvent } from 'react'
+import { useState, MouseEvent, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 import { introPic } from 'interfaces/interfaces';
+import MakeReservation from '../globalBtns/MakeReservation';
 
 const Home: NextPage = () => {
   const [pics, setPics] = useState<introPic[]>([{ isOnUI: true, path: "interiorDinningRoom" }, { isOnUI: false, path: "interiorLivingRoom" }, { isOnUI: false, path: "interiorStairs" }, { isOnUI: false, path: "introPic" }])
   const [indexPics, setIndexPics] = useState(0);
+  const [didFirstRenderOccur, setDidFirstRenderOccur] = useState(false);
+
+  // GOAL: make the intro pics scrollable automatically
+
+  // CASE: the current pic is the last pic of the pics array
+  // GOAL: show the first pics of the pics array
+  // THE FIRST pics is displayed onto the ui
+  // the index is zero
+  // the index is the last index of the pics array
+  // check if the user is on the last pic
 
 
-  const handleBtnClick = (num: number) => {
-    const wasBackBtnClicked = Math.sign(num) === -1;
+  // CASE: the current pics is the not the last pic of the pics array
+  // GOAL: show next pic of the pics array
+  // the next pic is displayed onto the UI, increase the index by one
+  // the user is not on the last pic of the pics array
+  // check if the user is in the last pic of the pics array (if index is equal to zero)
 
+
+  const displayNextPic = () => {
     const currentFilledInCircleIndex = pics.findIndex(({ isOnUI }) => isOnUI);
     const isUserOnLastPic = currentFilledInCircleIndex === (pics.length - 1)
-    const isUserOnFirstPic = currentFilledInCircleIndex === 0;
-    let nextCircleToBeFilledInIndex = currentFilledInCircleIndex + num;
-
-    if (isUserOnLastPic) {
-      nextCircleToBeFilledInIndex = 0
-    }
-
-    if (isUserOnFirstPic && wasBackBtnClicked) {
-      nextCircleToBeFilledInIndex = 3
-    }
-
-    // const nextCircleToBeFilledInIndex = ((currentFilledInCircleIndex + 1) !> (pics.length - 1)) ? (currentFilledInCircleIndex + 1) : 0; 
+    const nextCircleToBeFilledInIndex = isUserOnLastPic ? 0 : currentFilledInCircleIndex + 1;
     const _pics = pics.map((pic, index) => {
 
       if (index === nextCircleToBeFilledInIndex) {
@@ -50,13 +55,25 @@ const Home: NextPage = () => {
 
     setPics(_pics)
     setIndexPics(nextCircleToBeFilledInIndex)
-
-
+    console.log("the next pic is displayed.")
   }
+
+  useEffect(() => {
+    if(!didFirstRenderOccur){
+      setDidFirstRenderOccur(true)
+    } else {
+      console.log("hey there")
+      let intervalTimer = setInterval(() => {
+        console.log("will display the next pic.")
+        displayNextPic()
+      }, 2000)
+
+      return () => { clearInterval(intervalTimer) }
+    }
+  },[indexPics, didFirstRenderOccur])
 
   return (
     <>
-      <NavBar />
       <div className={`${styles.container} noPadding homePage`}>
         <Head>
           <title>Camiguin Lazones Resort Home Page</title>
@@ -66,11 +83,11 @@ const Home: NextPage = () => {
         {/* ${styles.main} was using this below */}
         <main className={`noPadding noMargin d-flex flex-column justify-content-start border-bottom pb-2 min-vh-100`}>
           <section className="row noMargin">
-            <div className='border-bottom pt-2 pb-2 col-12'>
+            <section className='border-bottom pt-2 pb-2 col-12'>
               <h1 className={`${styles.title} mt-3 medFontWeight col-12`}>
                 Welcome to Camguin Lazones Resort!
               </h1>
-            </div>
+            </section>
           </section>
           <section className='row noMargin noPadding introPicsSec flex-nowrap'>
             <section className='border-bottom col-12 border noPadding noMargin'>
@@ -81,11 +98,11 @@ const Home: NextPage = () => {
             <section className='d-flex justify-content-center align-items-center col-12'>
               {/* have an array of dots, if the user is on the specific picture then highlight that dot */}
               <section>
-                {pics.map(({ isOnUI }) => isOnUI ? <FaCircle className="me-1" /> : <FaRegCircle className="me-1" />)}
+                {pics.map(({ isOnUI, path }) => isOnUI ? <FaCircle key={path as string} className="me-1" /> : <FaRegCircle key={path as string} className="me-1" />)}
               </section>
             </section>
           </section>
-          <section className='row noMargin noPadding flex-nowrap'>
+          {/* <section className='row noMargin noPadding flex-nowrap'>
             <section className="d-flex justify-content-center align-items-center pt-2">
               <Button variant="secondary" className="me-1" onClick={() => { handleBtnClick(-1) }}>
                 <FaAngleLeft />
@@ -94,9 +111,11 @@ const Home: NextPage = () => {
                 <FaAngleRight />
               </Button>
             </section>
-          </section>
-          <section className={styles.grid}>
-
+          </section> */}
+          <section className='row noMargin noPadding flex-nowrap'>
+            <section className="d-flex justify-content-center align-items-center pt-4 pe-4">
+              <MakeReservation/>
+            </section>
           </section>
         </main>
 
