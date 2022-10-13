@@ -8,12 +8,50 @@ import styles from '../styles/Home.module.css'
 import { introPic } from 'interfaces/interfaces';
 
 const Home: NextPage = () => {
-  const [pics, setPics] = useState<introPic[]>([{isOnUI: true, path: "interiorDinningRoom"} , {isOnUI: false, path: "interiorLivingRoom"}, {isOnUI: false, path: "interiorStairs"}, { isOnUI: false,  path: "introPic"}])
+  const [pics, setPics] = useState<introPic[]>([{ isOnUI: true, path: "interiorDinningRoom" }, { isOnUI: false, path: "interiorLivingRoom" }, { isOnUI: false, path: "interiorStairs" }, { isOnUI: false, path: "introPic" }])
   const [indexPics, setIndexPics] = useState(0);
 
 
-  const handleBtnClick = (event: MouseEvent<HTMLButtonElement>) => {
-      // when the user clicks on this button, go to the next element in the pics state, and set isOn
+  const handleBtnClick = (num: number) => {
+    const wasBackBtnClicked = Math.sign(num) === -1;
+
+    const currentFilledInCircleIndex = pics.findIndex(({ isOnUI }) => isOnUI);
+    const isUserOnLastPic = currentFilledInCircleIndex === (pics.length - 1)
+    const isUserOnFirstPic = currentFilledInCircleIndex === 0;
+    let nextCircleToBeFilledInIndex = currentFilledInCircleIndex + num;
+
+    if (isUserOnLastPic) {
+      nextCircleToBeFilledInIndex = 0
+    }
+
+    if (isUserOnFirstPic && wasBackBtnClicked) {
+      nextCircleToBeFilledInIndex = 3
+    }
+
+    // const nextCircleToBeFilledInIndex = ((currentFilledInCircleIndex + 1) !> (pics.length - 1)) ? (currentFilledInCircleIndex + 1) : 0; 
+    const _pics = pics.map((pic, index) => {
+
+      if (index === nextCircleToBeFilledInIndex) {
+        return {
+          ...pic,
+          isOnUI: true
+        }
+      }
+
+      if (index === currentFilledInCircleIndex) {
+        return {
+          ...pic,
+          isOnUI: false
+        }
+      }
+
+      return pic
+    })
+
+    setPics(_pics)
+    setIndexPics(nextCircleToBeFilledInIndex)
+
+
   }
 
   return (
@@ -41,18 +79,18 @@ const Home: NextPage = () => {
           </section>
           <section className='row noMargin noPadding flex-nowrap'>
             <section className='d-flex justify-content-center align-items-center col-12'>
-                {/* have an array of dots, if the user is on the specific picture then highlight that dot */}
-                <section>
-                {pics.map(({isOnUI}) => isOnUI ? <FaCircle className="me-1"/> : <FaRegCircle className="me-1"/>)}
-                </section>
+              {/* have an array of dots, if the user is on the specific picture then highlight that dot */}
+              <section>
+                {pics.map(({ isOnUI }) => isOnUI ? <FaCircle className="me-1" /> : <FaRegCircle className="me-1" />)}
+              </section>
             </section>
           </section>
           <section className='row noMargin noPadding flex-nowrap'>
             <section className="d-flex justify-content-center align-items-center pt-2">
-              <Button variant="secondary" className="me-1">
+              <Button variant="secondary" className="me-1" onClick={() => { handleBtnClick(-1) }}>
                 <FaAngleLeft />
               </Button>
-              <Button variant="secondary" className="m-1">
+              <Button variant="secondary" className="m-1" onClick={() => { { handleBtnClick(1) } }}>
                 <FaAngleRight />
               </Button>
             </section>
