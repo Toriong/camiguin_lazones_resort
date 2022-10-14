@@ -7,6 +7,7 @@ import { useState, MouseEvent, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 import { introPic } from 'interfaces/interfaces';
 import MakeReservation from '../globalBtns/MakeReservation';
+import IntroPic from './HomePg/IntroPic';
 
 const Home: NextPage = () => {
   const [pics, setPics] = useState<introPic[]>([{ isOnUI: true, path: "interiorDinningRoom" }, { isOnUI: false, path: "interiorLivingRoom" }, { isOnUI: false, path: "interiorStairs" }, { isOnUI: false, path: "introPic" }])
@@ -59,7 +60,7 @@ const Home: NextPage = () => {
   }
 
   useEffect(() => {
-    if(!didFirstRenderOccur){
+    if (!didFirstRenderOccur) {
       setDidFirstRenderOccur(true)
     } else {
       console.log("hey there")
@@ -70,7 +71,7 @@ const Home: NextPage = () => {
 
       return () => { clearInterval(intervalTimer) }
     }
-  },[indexPics, didFirstRenderOccur])
+  }, [indexPics, didFirstRenderOccur])
 
   return (
     <>
@@ -90,8 +91,8 @@ const Home: NextPage = () => {
             </section>
           </section>
           <section className='row noMargin noPadding introPicsSec flex-nowrap'>
-            <section className='border-bottom col-12 border noPadding noMargin'>
-              <img src={`/imgs/${pics[indexPics].path}.jpeg`} alt="camiguin_lazones_resort_introPic" className='w-100 h-100' />
+            <section className='border-bottom col-12 border noPadding noMargin introPicsSubSec'>
+              {pics.map(({ isOnUI }) => isOnUI ? <IntroPic path={`/imgs/${pics[indexPics].path}.jpeg`} /> : null)}
             </section>
           </section>
           <section className='row noMargin noPadding flex-nowrap'>
@@ -114,7 +115,7 @@ const Home: NextPage = () => {
           </section> */}
           <section className='row noMargin noPadding flex-nowrap'>
             <section className="d-flex justify-content-center align-items-center pt-4 pe-4">
-              <MakeReservation/>
+              <MakeReservation />
             </section>
           </section>
         </main>
