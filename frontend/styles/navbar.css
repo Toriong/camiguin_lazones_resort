@@ -3,7 +3,9 @@
     
 }
 
-
+.navbarStyles{
+    z-index: 100000000;
+}
 
 .unfixed-wrapper,
 .navbarStyles{
