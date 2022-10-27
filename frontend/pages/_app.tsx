@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import "../styles/navbar.css"
 import "../styles/Pages/homePg.scss"
 import 'bootstrap/dist/css/bootstrap.css'

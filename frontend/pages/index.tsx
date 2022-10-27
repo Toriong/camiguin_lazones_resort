@@ -8,6 +8,7 @@ import styles from '../styles/Home.module.css'
 import { introPic } from 'interfaces/interfaces';
 import MakeReservation from '../globalBtns/MakeReservation';
 import IntroPic from './HomePg/IntroPic';
+import Logo from 'layout/Logo';
 
 const Home: NextPage = () => {
   const [pics, setPics] = useState<introPic[]>([{ isOnUI: true, path: "interiorDinningRoom" }, { isOnUI: false, path: "interiorLivingRoom" }, { isOnUI: false, path: "interiorStairs" }, { isOnUI: false, path: "introPic" }])
@@ -82,7 +83,7 @@ const Home: NextPage = () => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         {/* ${styles.main} was using this below */}
-        <main className={`noPadding noMargin d-flex flex-column justify-content-start border-bottom pb-2 min-vh-100`}>
+        <main className={`noPadding noMargin d-flex flex-column justify-content-start pb-2 min-vh-100`}>
           <section className="row noMargin noPadding">
             <section className='border-bottom pt-2 pb-4 col-12'>
               <h1 className={`${styles.title} mt-3 medFontWeight col-12`}>
@@ -114,8 +115,26 @@ const Home: NextPage = () => {
             </section>
           </section> */}
           <section className='row noMargin noPadding flex-nowrap'>
-            <section className="d-flex justify-content-center align-items-center pt-4 pe-4">
+            <section className="d-flex justify-content-center align-items-center pt-4 pe-4 col-12">
               <MakeReservation />
+            </section>
+          </section>
+          
+
+          {/* GOAL: make the curve for the web for this section  */}
+          <section className='row noPadding pitchSec'>
+            <div className="curve"/>
+            <section className='col-12 d-flex justify-content-center align-items-center'>
+                <section className='pt-2'>
+                    <Logo width={100} height={100}/>
+                </section>
+            </section>
+            <section className='col-12 d-flex justify-content-center align-items-center'>
+                  {/* put an animation of different ways of saying welcome */}
+                  <span className="largerFontSize">Hello!</span>
+            </section>
+            <section className='col-12'>
+                  {/* provide the verbal pitch here */}
             </section>
           </section>
         </main>
