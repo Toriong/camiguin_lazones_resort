@@ -18,7 +18,19 @@ a {
   box-sizing: border-box;
 }
 
+.overlay{
+  background-color: rgb(0, 0, 0, .4);
+}
 
+.flicker{
+  animation-name: flicker !important;
+  animation-duration: 2s;
+}
+
+@keyframes flicker {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
 
 .noPadding{
   padding: 0 !important
@@ -33,7 +45,8 @@ a {
 }
 
 .largerFontSize{
-  font-size: 30px !important;
+  font-size: 30
+  px !important;
 }
 
 .medFontWeight{

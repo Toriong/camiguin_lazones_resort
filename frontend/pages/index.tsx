@@ -12,8 +12,8 @@ import Logo from 'layout/Logo';
 
 const Home: NextPage = () => {
   const [pics, setPics] = useState<introPic[]>([{ isOnUI: true, path: "interiorDinningRoom" }, { isOnUI: false, path: "interiorLivingRoom" }, { isOnUI: false, path: "interiorStairs" }, { isOnUI: false, path: "introPic" }])
-  const [indexPics, setIndexPics] = useState(0);
-  const [didFirstRenderOccur, setDidFirstRenderOccur] = useState(false);
+  // const [indexPics, setIndexPics] = useState(0);
+  // const [didFirstRenderOccur, setDidFirstRenderOccur] = useState(false);
 
   // GOAL: make the intro pics scrollable automatically
 
@@ -32,47 +32,47 @@ const Home: NextPage = () => {
   // check if the user is in the last pic of the pics array (if index is equal to zero)
 
 
-  const displayNextPic = () => {
-    const currentFilledInCircleIndex = pics.findIndex(({ isOnUI }) => isOnUI);
-    const isUserOnLastPic = currentFilledInCircleIndex === (pics.length - 1)
-    const nextCircleToBeFilledInIndex = isUserOnLastPic ? 0 : currentFilledInCircleIndex + 1;
-    const _pics = pics.map((pic, index) => {
+  // const displayNextPic = () => {
+  //   const currentFilledInCircleIndex = pics.findIndex(({ isOnUI }) => isOnUI);
+  //   const isUserOnLastPic = currentFilledInCircleIndex === (pics.length - 1)
+  //   const nextCircleToBeFilledInIndex = isUserOnLastPic ? 0 : currentFilledInCircleIndex + 1;
+  //   const _pics = pics.map((pic, index) => {
 
-      if (index === nextCircleToBeFilledInIndex) {
-        return {
-          ...pic,
-          isOnUI: true
-        }
-      }
+  //     if (index === nextCircleToBeFilledInIndex) {
+  //       return {
+  //         ...pic,
+  //         isOnUI: true
+  //       }
+  //     }
 
-      if (index === currentFilledInCircleIndex) {
-        return {
-          ...pic,
-          isOnUI: false
-        }
-      }
+  //     if (index === currentFilledInCircleIndex) {
+  //       return {
+  //         ...pic,
+  //         isOnUI: false
+  //       }
+  //     }
 
-      return pic
-    })
+  //     return pic
+  //   })
 
-    setPics(_pics)
-    setIndexPics(nextCircleToBeFilledInIndex)
-    console.log("the next pic is displayed.")
-  }
+  //   setPics(_pics)
+  //   setIndexPics(nextCircleToBeFilledInIndex)
+  //   console.log("the next pic is displayed.")
+  // }
 
-  useEffect(() => {
-    if (!didFirstRenderOccur) {
-      setDidFirstRenderOccur(true)
-    } else {
-      console.log("hey there")
-      let intervalTimer = setInterval(() => {
-        console.log("will display the next pic.")
-        displayNextPic()
-      }, 2000)
+  // useEffect(() => {
+  //   if (!didFirstRenderOccur) {
+  //     setDidFirstRenderOccur(true)
+  //   } else {
+  //     console.log("hey there")
+  //     let intervalTimer = setInterval(() => {
+  //       console.log("will display the next pic.")
+  //       displayNextPic()
+  //     }, 2000)
 
-      return () => { clearInterval(intervalTimer) }
-    }
-  }, [indexPics, didFirstRenderOccur])
+  //     return () => { clearInterval(intervalTimer) }
+  //   }
+  // }, [indexPics, didFirstRenderOccur])
 
   return (
     <>
@@ -83,24 +83,31 @@ const Home: NextPage = () => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         {/* ${styles.main} was using this below */}
-        <main className={`noPadding noMargin d-flex flex-column justify-content-start pb-2 min-vh-100`}>
-          <section className="row noMargin noPadding">
+        <main className="noPadding noMargin d-flex flex-column justify-content-start pb-2 min-vh-100">
+          {/* <section className="row noMargin noPadding">
             <section className='border-bottom pt-2 pb-4 col-12'>
               <h1 className={`${styles.title} mt-3 medFontWeight col-12`}>
                 Camguin Lazones Resort
               </h1>
             </section>
-          </section>
+          </section> */}
           <section className='row noMargin noPadding introPicsSec flex-nowrap'>
-            <section className='border-bottom col-12 border noPadding noMargin introPicsSubSec'>
-              {pics.map(({ isOnUI }) => isOnUI ? <IntroPic path={`/imgs/${pics[indexPics].path}.jpeg`} /> : null)}
+            <section className='border-bottom col-12 border noPadding noMargin introPicsSubSec position-relative'>
+              {/* {pics.map(({ isOnUI }) => isOnUI ? <IntroPic path={`/imgs/${pics[indexPics].path}.jpeg`} /> : null)} */}
+              <img src='/imgs/interiorStairs.jpeg' alt="camiguin_lazones_resort_introPic" className='w-100 h-100 position-absolute flicker' />
+              <div className="overlay position-absolute w-100 h-100 flicker"/>
+              <div className='position-absolute bottom-0 d-flex justify-content-center align-items-center w-100 mb-5'>
+                <div>
+                {pics.map(({ isOnUI, path }) => isOnUI ? <FaCircle key={path as string} className="me-1 border-dark" /> : <FaRegCircle key={path as string} className="me-1 border-dark bg-secondary rounded-circle" />)}
+                </div>
+              </div>
             </section>
           </section>
           <section className='row noMargin noPadding flex-nowrap'>
             <section className='d-flex justify-content-center align-items-center col-12'>
               {/* have an array of dots, if the user is on the specific picture then highlight that dot */}
               <section>
-                {pics.map(({ isOnUI, path }) => isOnUI ? <FaCircle key={path as string} className="me-1" /> : <FaRegCircle key={path as string} className="me-1" />)}
+                {/* {pics.map(({ isOnUI, path }) => isOnUI ? <FaCircle key={path as string} className="me-1" /> : <FaRegCircle key={path as string} className="me-1" />)} */}
               </section>
             </section>
           </section>
@@ -120,9 +127,7 @@ const Home: NextPage = () => {
             </section>
           </section>
           
-
-          {/* GOAL: make the curve for the web for this section  */}
-          <section className='row noPadding pitchSec'>
+          {/* <section className='row noPadding pitchSec'>
             <div className="curve"/>
             <section className='col-12 d-flex justify-content-center align-items-center'>
                 <section className='pt-2'>
@@ -130,13 +135,13 @@ const Home: NextPage = () => {
                 </section>
             </section>
             <section className='col-12 d-flex justify-content-center align-items-center'>
-                  {/* put an animation of different ways of saying welcome */}
+                  put an animation of different ways of saying welcome
                   <span className="largerFontSize">Hello!</span>
             </section>
             <section className='col-12'>
-                  {/* provide the verbal pitch here */}
+                  provide the verbal pitch here
             </section>
-          </section>
+          </section> */}
         </main>
 
         {/* <footer className={styles.footer}>
