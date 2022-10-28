@@ -20,8 +20,15 @@
 .introPicHeading{
   font-size: 70px;
   font-style: normal;
+  // width: 200px !important;
+  // border: solid pink;s
   font-weight: 500;
   font-family: Roboto !important;
+}
+
+.txtSpan{
+  border: solid green;
+  // width: 185px !important
 }
 
 // WHAT IS HAPPENING:
@@ -30,8 +37,8 @@
 // GOAL: make move from left to right (from -100px to 0px)
 
 .slideRight {
-  position: absolute;
-  // left: -300px !important;
+  // left: -100px !important;
+  transform: translateX(-100px);
   // -webkit-animation: slideRight 2s forwards !important;
   // -webkit-animation-delay: 2s !important;
   animation: slideRight 2s forwards !important;
@@ -43,8 +50,11 @@
 // }
 
 @keyframes slideRight {
-  from {left: -100px; opacity: 0}
-  to{left: 0px; opacity: 1}
+  0% { opacity: 0}
+  25% {opacity: .25}
+  50% {opacity: .5}
+  75% {opacity: .75}
+  100%{ opacity: 1; transform: translateX(0px)}
 }
 
 .introPicTxtInnerSec{

@@ -5,11 +5,15 @@ import { FaCircle, FaRegCircle } from "react-icons/fa";
 import { v4 as uuidv4 } from "uuid";
 
 function IntroPicsSec() {
+  const picsTxtsPic1 = ["WHY", "CHOOSE", "US?"];
+  const picsTxtsPic2 = ["OUR", "MISSION"];
+  const picsTxtsPic3 = ["OUR", "VALUES"];
+  const picTxtsPic4 = ["STAY", "WITH", "US!"];
   const [pics, setPics] = useState<introPic[]>([
-    { isOnUI: true, path: "introPic", picTxt: "WHY CHOOSE US?" },
-    { isOnUI: false, path: "interiorLivingRoom", picTxt: "OUR MISSION." },
-    { isOnUI: false, path: "interiorStairs", picTxt: "OUR VALUES." },
-    { isOnUI: false, path: "interiorDinningRoom", picTxt: "STAY WITH US!" },
+    { isOnUI: true, path: "introPic", picTxts: picsTxtsPic1 },
+    { isOnUI: false, path: "interiorLivingRoom", picTxts: picsTxtsPic2 },
+    { isOnUI: false, path: "interiorStairs", picTxts: picsTxtsPic3 },
+    { isOnUI: false, path: "interiorDinningRoom", picTxts: picTxtsPic4 },
   ]);
   const [currentPicIndex, setCurrentPicIndex] = useState(0);
   const picId = uuidv4();
@@ -62,12 +66,19 @@ function IntroPicsSec() {
               style={{ zIndex: 100 }}
               className="h-100 w-75 position-absolute end-0 overlayForTxt"
             />
-              <h1
-                key={introPicTxtId}
-                className="text-white introPicHeading flicker position-absolute w-100 text-nowrap slideRight"
-              >
-                {pics[currentPicIndex].picTxt}
-              </h1>
+            <h1
+              key={introPicTxtId}
+              className="text-white introPicHeading text-nowrap d-flex"
+            >
+              {pics[currentPicIndex].picTxts.map((txt) => {
+                const key = uuidv4();
+                return (
+                    <span key={key} className="slideRight ms-2 w-fitContent">
+                      {txt}
+                    </span>
+                );
+              })}
+            </h1>
           </section>
         </section>
         <div className="position-absolute bottom-0 d-flex justify-content-center align-items-center w-100 mb-5">
