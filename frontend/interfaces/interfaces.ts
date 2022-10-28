@@ -1,5 +1,6 @@
 export interface introPic{
     isOnUI: Boolean
-    path: String
+    path: String,
+    picTxt: String
 }
 

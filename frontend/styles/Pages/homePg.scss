@@ -6,12 +6,55 @@
   height: 720px !important;
 }
 
+.introPicTxt{
+  // border: solid pink !important;
+  z-index: 10;
+}
 
 .introPicsSubSec {
   img {
     cursor: pointer;
   }
 }
+
+.introPicHeading{
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 500;
+  font-family: Roboto !important;
+}
+
+// WHAT IS HAPPENING:
+// the element start -100px left
+
+// GOAL: make move from left to right (from -100px to 0px)
+
+.slideRight {
+  position: absolute;
+  // left: -300px !important;
+  // -webkit-animation: slideRight 2s forwards !important;
+  // -webkit-animation-delay: 2s !important;
+  animation: slideRight 2s forwards !important;
+  // animation-delay: 2s !important;
+}
+
+// @-webkit-keyframes slideRight {
+//   100% { left: 0; }
+// }
+
+@keyframes slideRight {
+  from {left: -100px; opacity: 0}
+  to{left: 0px; opacity: 1}
+}
+
+.introPicTxtInnerSec{
+  // width: 00px !important;
+  height: 100px;
+}
+
+// .introPicTxtInnerSec{
+//   width: fit-content !imp
+// }
 
 .pitchSec {
   position: relative;

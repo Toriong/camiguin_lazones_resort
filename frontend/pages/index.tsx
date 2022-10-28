@@ -12,8 +12,7 @@ import Logo from 'layout/Logo';
 import IntroPicsSec from './HomePg/sections/IntroPicsSec';
 
 const Home: NextPage = () => {
-  const [pics, setPics] = useState<introPic[]>([{ isOnUI: true, path: "interiorDinningRoom" }, { isOnUI: false, path: "interiorLivingRoom" }, { isOnUI: false, path: "interiorStairs" }, { isOnUI: false, path: "introPic" }])
-  const [currentPicIndex, setCurrentPicIndex] = useState(0);
+  
 
 
   // GOAL: if the user clicks on n button, the get its index and store it into the currentPicIndex 
@@ -44,32 +43,6 @@ const Home: NextPage = () => {
   // map through pics 
 
 
-  const handleBtnClick = (indexOfPicToDisplayOnUI:number) => {
-    const _pics = pics.map((pic, index) => {
-      if(index === currentPicIndex){
-        return {
-          ...pic,
-          isOnUI: false
-        }
-      }
-
-      if(index === indexOfPicToDisplayOnUI){
-        return {
-          ...pic,
-          isOnUI: true
-        }
-      }
-
-      return pic
-    })
-
-    setCurrentPicIndex(indexOfPicToDisplayOnUI)
-    setPics(_pics)
-  }
-
-  useEffect(() => {
-    console.log("hey there")
-  })
 
 
 
