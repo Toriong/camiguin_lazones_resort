@@ -12,67 +12,61 @@ import Logo from 'layout/Logo';
 
 const Home: NextPage = () => {
   const [pics, setPics] = useState<introPic[]>([{ isOnUI: true, path: "interiorDinningRoom" }, { isOnUI: false, path: "interiorLivingRoom" }, { isOnUI: false, path: "interiorStairs" }, { isOnUI: false, path: "introPic" }])
-  // const [indexPics, setIndexPics] = useState(0);
-  // const [didFirstRenderOccur, setDidFirstRenderOccur] = useState(false);
-
-  // GOAL: make the intro pics scrollable automatically
-
-  // CASE: the current pic is the last pic of the pics array
-  // GOAL: show the first pics of the pics array
-  // THE FIRST pics is displayed onto the ui
-  // the index is zero
-  // the index is the last index of the pics array
-  // check if the user is on the last pic
+  const [currentPicIndex, setCurrentPicIndex] = useState(0);
 
 
-  // CASE: the current pics is the not the last pic of the pics array
-  // GOAL: show next pic of the pics array
-  // the next pic is displayed onto the UI, increase the index by one
-  // the user is not on the last pic of the pics array
-  // check if the user is in the last pic of the pics array (if index is equal to zero)
+  // GOAL: if the user clicks on n button, the get its index and store it into the currentPicIndex 
+  // the pic that the user selected is displayed onto the dom based on what button the user clicked on 
+  // the path is passed for the src tag of the image 
+  // get the path, access the path
+  // the target pic object is accessed 
+  // get the target pic
+  // the index of the button that was clicked is stored into currentPicIndex state 
+  // get the index of the button
+  // a button is clicked
+
+  // GOAL: un-highlight the button that was selected 
+  // the previous selected button is un-highlighted 
+  // the pics state is updated 
+  // return the pic that is not on the UI 
+  // change isOnUI to false
+  // the button that is highlighted is found (or the pic isOnUI is true)
+  // using the index of the button that was selected, find the button that is currently high lighted and un-highlighted, find the current pic on the UI 
+
+  // GOAL: highlight the button that was selected 
+  // the button that was selected is highlighted based on the index of the pic that will be displayed onto the DOM 
+  // the pic that is not selected and but is not the selected pic returned 
+  // the pic that is selected, 'isOnUI' is set to true 
+  // get the next pic that will be displayed onto the UI by index 
+  // the pic that is currently on the UI, 'isOnUI' is set to false 
+  // get the pic that is on the ui by the currentPicIndex
+  // map through pics 
 
 
-  // const displayNextPic = () => {
-  //   const currentFilledInCircleIndex = pics.findIndex(({ isOnUI }) => isOnUI);
-  //   const isUserOnLastPic = currentFilledInCircleIndex === (pics.length - 1)
-  //   const nextCircleToBeFilledInIndex = isUserOnLastPic ? 0 : currentFilledInCircleIndex + 1;
-  //   const _pics = pics.map((pic, index) => {
+  const handleBtnClick = (indexOfPicToDisplayOnUI:number) => {
+    const _pics = pics.map((pic, index) => {
+      if(index === currentPicIndex){
+        return {
+          ...pic,
+          isOnUI: false
+        }
+      }
 
-  //     if (index === nextCircleToBeFilledInIndex) {
-  //       return {
-  //         ...pic,
-  //         isOnUI: true
-  //       }
-  //     }
+      if(index === indexOfPicToDisplayOnUI){
+        return {
+          ...pic,
+          isOnUI: true
+        }
+      }
 
-  //     if (index === currentFilledInCircleIndex) {
-  //       return {
-  //         ...pic,
-  //         isOnUI: false
-  //       }
-  //     }
+      return pic
+    })
 
-  //     return pic
-  //   })
+    setCurrentPicIndex(indexOfPicToDisplayOnUI)
+    setPics(_pics)
+  }
 
-  //   setPics(_pics)
-  //   setIndexPics(nextCircleToBeFilledInIndex)
-  //   console.log("the next pic is displayed.")
-  // }
 
-  // useEffect(() => {
-  //   if (!didFirstRenderOccur) {
-  //     setDidFirstRenderOccur(true)
-  //   } else {
-  //     console.log("hey there")
-  //     let intervalTimer = setInterval(() => {
-  //       console.log("will display the next pic.")
-  //       displayNextPic()
-  //     }, 2000)
-
-  //     return () => { clearInterval(intervalTimer) }
-  //   }
-  // }, [indexPics, didFirstRenderOccur])
 
   return (
     <>
@@ -93,8 +87,8 @@ const Home: NextPage = () => {
           </section> */}
           <section className='row noMargin noPadding introPicsSec flex-nowrap'>
             <section className='border-bottom col-12 border noPadding noMargin introPicsSubSec position-relative'>
-              {/* {pics.map(({ isOnUI }) => isOnUI ? <IntroPic path={`/imgs/${pics[indexPics].path}.jpeg`} /> : null)} */}
-              <img src='/imgs/interiorStairs.jpeg' alt="camiguin_lazones_resort_introPic" className='w-100 h-100 position-absolute flicker' />
+              {/* {pics.map(({ isOnUI }) => isOnUI ? <IntroPic path={`/imgs/${pics[currentPicIndex].path}.jpeg`} /> : null)} */}
+              <img src={`/imgs/${pics[currentPicIndex]}`} alt="camiguin_lazones_resort_introPic" className='w-100 h-100 position-absolute flicker' />
               <div className="overlay position-absolute w-100 h-100 flicker"/>
               <div className='position-absolute bottom-0 d-flex justify-content-center align-items-center w-100 mb-5'>
                 <div>
