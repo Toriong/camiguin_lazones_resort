@@ -66,6 +66,10 @@ const Home: NextPage = () => {
     setPics(_pics)
   }
 
+  useEffect(() => {
+    console.log("hey there")
+  })
+
 
 
   return (
@@ -88,11 +92,14 @@ const Home: NextPage = () => {
           <section className='row noMargin noPadding introPicsSec flex-nowrap'>
             <section className='border-bottom col-12 border noPadding noMargin introPicsSubSec position-relative'>
               {/* {pics.map(({ isOnUI }) => isOnUI ? <IntroPic path={`/imgs/${pics[currentPicIndex].path}.jpeg`} /> : null)} */}
-              <img src={`/imgs/${pics[currentPicIndex]}`} alt="camiguin_lazones_resort_introPic" className='w-100 h-100 position-absolute flicker' />
+
+              {/* MAKE THE IMAGE AND THE PIC FLICKER WHEN THE USER CLICKS ON THE BUTTON  */}
+              {/* GOAL: make the following three elements below to re-render seperate from the home page component */}
+              <img src={`/imgs/${pics[currentPicIndex].path}.jpeg`} alt="camiguin_lazones_resort_introPic" className='w-100 h-100 position-absolute flicker' />
               <div className="overlay position-absolute w-100 h-100 flicker"/>
               <div className='position-absolute bottom-0 d-flex justify-content-center align-items-center w-100 mb-5'>
                 <div>
-                {pics.map(({ isOnUI, path }) => isOnUI ? <FaCircle key={path as string} className="me-1 border-dark" /> : <FaRegCircle key={path as string} className="me-1 border-dark bg-secondary rounded-circle" />)}
+                {pics.map(({ isOnUI, path }, index) => isOnUI ? <FaCircle key={path as string} className="me-1 border-dark" onClick={() => { handleBtnClick(index) }} /> : <FaRegCircle key={path as string} className="me-1 border-dark bg-secondary rounded-circle" onClick={() => { handleBtnClick(index) }}  />)}
                 </div>
               </div>
             </section>
