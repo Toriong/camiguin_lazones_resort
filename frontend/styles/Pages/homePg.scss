@@ -31,6 +31,15 @@
   // width: 185px !important
 }
 
+.infoTxtP{
+  font-weight: 400;
+  font-size: 21px;
+}
+
+.circleBtn{
+  font-size: 26px !important;
+}
+
 // WHAT IS HAPPENING:
 // the element start -100px left
 
@@ -51,9 +60,9 @@
 
 @keyframes slideRight {
   0% { opacity: 0}
-  25% {opacity: .25}
-  50% {opacity: .5}
-  75% {opacity: .75}
+  // 25% {opacity: .25}
+  // 50% {opacity: .5}
+  // 75% {opacity: .75}
   100%{ opacity: 1; transform: translateX(0px)}
 }
 
