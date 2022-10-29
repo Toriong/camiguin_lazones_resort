@@ -28,6 +28,8 @@ a {
   animation-duration: 2s;
 }
 
+
+
 .pointer{
   cursor: pointer !important;
 }
@@ -41,6 +43,16 @@ a {
 @keyframes flicker {
   from {opacity: .4} 
   to {opacity: 1}
+}
+
+.flickerFaster{
+  animation-name: flickerFaster !important;
+  animation-duration: 1s
+}
+
+@keyframes flickerFaster {
+  0% {opacity: .4} 
+  100% {opacity: 1}
 }
 
 .noPadding{
@@ -62,6 +74,10 @@ a {
 
 .medFontWeight{
   font-weight: 250 !important;
+}
+
+.heavyFontWeight{
+  font-weight: 500 !important
 }
 
 .noMargin{

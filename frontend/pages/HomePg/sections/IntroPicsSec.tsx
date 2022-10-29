@@ -3,10 +3,12 @@ import { introPic } from "interfaces/interfaces";
 import { useState } from "react";
 import { FaCircle, FaRegCircle } from "react-icons/fa";
 import { v4 as uuidv4 } from "uuid";
+import HiAnimations from "../animations/HiAnimations";
 
 function IntroPicsSec() {
     const dummyInfoTxt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis tempora deleniti dolorem, quia recusandae magnam facilis unde, porro a, nostrum quisquam quidem atque autem odit accusantium tenetur dolorum exercitationem officiis quam voluptatibus similique aperiam! Expedita sed harum facilis dolorem unde dolores non eius odit, neque laborum, fugiat, omnis iste repudiandae."
-  const picsTxtsPic1 = ["WHY", "CHOOSE", "US?"];
+  // const picsTxtsPic1 = ["WHY", "CHOOSE", "US?"];
+  const picsTxtsPic1 = ["WELCOME!"]
   const picsTxtsPic2 = ["OUR", "MISSION"];
   const picsTxtsPic3 = ["OUR", "VALUES"];
   const picTxtsPic4 = ["STAY", "WITH", "US!"];
@@ -54,7 +56,7 @@ function IntroPicsSec() {
           alt="camiguin_lazones_resort_introPic"
           className="w-100 h-100 position-absolute flicker"
         />
-
+        <HiAnimations/>
         <div className="overlay position-absolute w-100 h-100 flicker" />
         <section className="w-50 h-75 introPicTxt d-flex flex-column pt-4">
           {/* create an overlay don't will disappear within 2 seconds. Have its width decrease by 50% with each 2 seconds */}
