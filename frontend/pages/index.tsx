@@ -56,32 +56,12 @@ const Home: NextPage = () => {
         </Head>
         {/* ${styles.main} was using this below */}
         <main className="noPadding noMargin d-flex flex-column justify-content-start pb-2 min-vh-100">
-          {/* <section className="row noMargin noPadding">
-            <section className='border-bottom pt-2 pb-4 col-12'>
-              <h1 className={`${styles.title} mt-3 medFontWeight col-12`}>
-                Camguin Lazones Resort
-              </h1>
-            </section>
-          </section> */}
           <IntroPicsSec/>
           <section className='row noMargin noPadding flex-nowrap'>
             <section className='d-flex justify-content-center align-items-center col-12'>
-              {/* have an array of dots, if the user is on the specific picture then highlight that dot */}
-              <section>
-                {/* {pics.map(({ isOnUI, path }) => isOnUI ? <FaCircle key={path as string} className="me-1" /> : <FaRegCircle key={path as string} className="me-1" />)} */}
-              </section>
+      
             </section>
           </section>
-          {/* <section className='row noMargin noPadding flex-nowrap'>
-            <section className="d-flex justify-content-center align-items-center pt-2">
-              <Button variant="secondary" className="me-1" onClick={() => { handleBtnClick(-1) }}>
-                <FaAngleLeft />
-              </Button>
-              <Button variant="secondary" className="m-1" onClick={() => { { handleBtnClick(1) } }}>
-                <FaAngleRight />
-              </Button>
-            </section>
-          </section> */}
           <section className='row noMargin noPadding flex-nowrap'>
             <section className="d-flex justify-content-center align-items-center pt-4 pe-4 col-12">
               <MakeReservation />

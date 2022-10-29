@@ -46,23 +46,23 @@
 // GOAL: make move from left to right (from -100px to 0px)
 
 .slideRight {
-  // left: -100px !important;
   transform: translateX(-100px);
-  // -webkit-animation: slideRight 2s forwards !important;
-  // -webkit-animation-delay: 2s !important;
   animation: slideRight 2s forwards !important;
-  // animation-delay: 2s !important;
 }
 
-// @-webkit-keyframes slideRight {
-//   100% { left: 0; }
-// }
+
+.slideUp{
+  transform: translateY(105px);
+  animation: slideUp 2s forwards !important
+}
+
+@keyframes slideUp {
+  // 0% { transform: translateY(105px)}
+  100% { transform: translateY(0px) }
+}
 
 @keyframes slideRight {
   0% { opacity: 0}
-  // 25% {opacity: .25}
-  // 50% {opacity: .5}
-  // 75% {opacity: .75}
   100%{ opacity: 1; transform: translateX(0px)}
 }
 

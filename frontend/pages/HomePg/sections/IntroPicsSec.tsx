@@ -44,15 +44,6 @@ function IntroPicsSec() {
     setPics(_pics);
   }
 
-  //   GOAL: present the different text based on the index of the pics array
-
-  // BRAIN DUMP:
-  // have the text display on the ui based on the index of the pic
-  // insert the text into the pics array
-  // have a section in the jsx hold the text for the intro pic
-
-
-//   GOAL: Load all pictures before onto the ui.
 
   return (
     <section className="row noMargin noPadding introPicsSec flex-nowrap">
@@ -63,8 +54,9 @@ function IntroPicsSec() {
           alt="camiguin_lazones_resort_introPic"
           className="w-100 h-100 position-absolute flicker"
         />
+
         <div className="overlay position-absolute w-100 h-100 flicker" />
-        <section className="w-50 h-75 introPicTxt d-flex flex-column">
+        <section className="w-50 h-75 introPicTxt d-flex flex-column pt-4">
           {/* create an overlay don't will disappear within 2 seconds. Have its width decrease by 50% with each 2 seconds */}
           <section className="position-relative w-100 introPicTxtInnerSec mt-5 pt-3">
             <div
@@ -87,7 +79,7 @@ function IntroPicsSec() {
             </h1>
           </section>
           <section className="position-relative w-100 mt-3">
-            <span className="text-white infoTxtP slideRight" key={infoTxtId}>{pics[currentPicIndex].infoTxt}</span>
+            <span className="text-white infoTxtP slideUp position-absolute" key={infoTxtId}>{pics[currentPicIndex].infoTxt}</span>
           </section>
           {/* only show this section below if the user is on either the first pic or on the last pic */}
           {/* if the user is on the first pic, then show make a reservation button */}
