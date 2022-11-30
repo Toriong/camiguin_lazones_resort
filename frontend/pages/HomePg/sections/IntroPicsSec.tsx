@@ -1,4 +1,5 @@
 import { randomUUID } from "crypto";
+import MakeReservation from "globalBtns/MakeReservation";
 import { introPic } from "interfaces/interfaces";
 import { useState } from "react";
 import { FaCircle, FaRegCircle } from "react-icons/fa";
@@ -6,7 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 import HiAnimations from "../animations/HiAnimations";
 
 function IntroPicsSec() {
-    const dummyInfoTxt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis tempora deleniti dolorem, quia recusandae magnam facilis unde, porro a, nostrum quisquam quidem atque autem odit accusantium tenetur dolorum exercitationem officiis quam voluptatibus similique aperiam! Expedita sed harum facilis dolorem unde dolores non eius odit, neque laborum, fugiat, omnis iste repudiandae."
+  const dummyInfoTxt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis tempora deleniti dolorem, quia recusandae magnam facilis unde, porro a, nostrum quisquam quidem atque autem odit accusantium tenetur dolorum exercitationem officiis quam voluptatibus similique aperiam! Expedita sed harum facilis dolorem unde dolores non eius odit, neque laborum, fugiat, omnis iste repudiandae."
   // const picsTxtsPic1 = ["WHY", "CHOOSE", "US?"];
   const picsTxtsPic1 = ["WELCOME!"]
   const picsTxtsPic2 = ["OUR", "MISSION"];
@@ -112,6 +113,7 @@ function IntroPicsSec() {
             )}
           </div>
         </div>
+        <MakeReservation buttonKeyForRerender={uuidv4()}/>
       </section>
     </section>
   );

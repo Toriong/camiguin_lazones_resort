@@ -56,6 +56,10 @@
   animation: slideRight 2s forwards !important;
 }
 
+.slideLeft {
+  transform: translateX(100px);
+  animation: slideLeft 2s forwards !important;
+}
 
 .slideUp{
   transform: translateY(105px);
@@ -68,6 +72,11 @@
 }
 
 @keyframes slideRight {
+  0% { opacity: 0}
+  100%{ opacity: 1; transform: translateX(0px)}
+}
+
+@keyframes slideLeft {
   0% { opacity: 0}
   100%{ opacity: 1; transform: translateX(0px)}
 }
