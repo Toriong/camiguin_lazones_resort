@@ -12,40 +12,6 @@ import Logo from 'layout/Logo';
 import IntroPicsSec from './HomePg/sections/IntroPicsSec';
 
 const Home: NextPage = () => {
-  
-
-
-  // GOAL: if the user clicks on n button, the get its index and store it into the currentPicIndex 
-  // the pic that the user selected is displayed onto the dom based on what button the user clicked on 
-  // the path is passed for the srpc tag of the image 
-  // get the path, access the path
-  // the target pic object is accessed 
-  // get the target pic
-  // the index of the button that was clicked is stored into currentPicIndex state 
-  // get the index of the button
-  // a button is clicked
-
-  // GOAL: un-highlight the button that was selected 
-  // the previous selected button is un-highlighted 
-  // the pics state is updated 
-  // return the pic that is not on the UI 
-  // change isOnUI to false
-  // the button that is highlighted is found (or the pic isOnUI is true)
-  // using the index of the button that was selected, find the button that is currently high lighted and un-highlighted, find the current pic on the UI 
-
-  // GOAL: highlight the button that was selected 
-  // the button that was selected is highlighted based on the index of the pic that will be displayed onto the DOM 
-  // the pic that is not selected and but is not the selected pic returned 
-  // the pic that is selected, 'isOnUI' is set to true 
-  // get the next pic that will be displayed onto the UI by index 
-  // the pic that is currently on the UI, 'isOnUI' is set to false 
-  // get the pic that is on the ui by the currentPicIndex
-  // map through pics 
-
-
-
-
-
   return (
     <>
       <div className={`${styles.container} noPadding homePage min-vh-100`}>
@@ -62,13 +28,13 @@ const Home: NextPage = () => {
       
             </section>
           </section>
-          <section className='row noMargin noPadding flex-nowrap'>
+          {/* <section className='row noMargin noPadding flex-nowrap'>
             <section className="d-flex justify-content-center align-items-center pt-4 pe-4 col-12">
               <MakeReservation />
             </section>
-          </section>
+          </section> */}
           
-          {/* <section className='row noPadding pitchSec'>
+          <section className='row noPadding pitchSec'>
             <div className="curve"/>
             <section className='col-12 d-flex justify-content-center align-items-center'>
                 <section className='pt-2'>
@@ -76,13 +42,13 @@ const Home: NextPage = () => {
                 </section>
             </section>
             <section className='col-12 d-flex justify-content-center align-items-center'>
-                  put an animation of different ways of saying welcome
+                  {/* put an animation of different ways of saying welcome */}
                   <span className="largerFontSize">Hello!</span>
             </section>
             <section className='col-12'>
-                  provide the verbal pitch here
+                  {/* provide the verbal pitch here */}
             </section>
-          </section> */}
+          </section>
         </main>
 
         {/* <footer className={styles.footer}>
