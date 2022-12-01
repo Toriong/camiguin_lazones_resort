@@ -100,10 +100,12 @@
   background: $curve-color;
 }
 
-.pitchTxtSec{
-  
-}
-
-.titleSecPitchSec{
-  // border: solid pink;
+.homePgInfoSec{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 700px;
+  border-radius: 20px;
+  background: $curve-color;
 }

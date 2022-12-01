@@ -47,6 +47,7 @@ const Home: NextPage = () => {
             <section className='col-12'>
             </section>
           </section> */}
+          
           <section className='row ps-5 pe-5 mt-5'>
             <section className="col-12 pitchSec shadow">
               <section className='pt-2'>
