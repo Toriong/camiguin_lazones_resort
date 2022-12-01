@@ -90,7 +90,24 @@
 //   width: fit-content !imp
 // }
 
+.roomsMainSec,
 .pitchSec {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // height: 600px;
+  border-radius: 20px;
+  background: $curve-color;
+}
+
+.roomsList{
+  column-count: 2;
+}
+
+
+
+.homePgInfoSec{
   position: relative;
   display: flex;
   flex-direction: column;
@@ -100,12 +117,20 @@
   background: $curve-color;
 }
 
-.homePgInfoSec{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 700px;
-  border-radius: 20px;
-  background: $curve-color;
+.ourRoomsSec{
+  height: fit-content;;
 }
+
+.roomMainSec {
+  img{
+    width: 100%;
+    height: 300px;
+  }
+}
+
+.ourRoomsImg{
+  width: 100px;
+  height: 90px;
+}
+
+

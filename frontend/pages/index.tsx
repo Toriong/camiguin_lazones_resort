@@ -10,6 +10,7 @@ import MakeReservation from '../globalBtns/MakeReservation';
 import IntroPic from './HomePg/IntroPic';
 import Logo from 'layout/Logo';
 import IntroPicsSec from './HomePg/sections/IntroPicsSec';
+import OurRoomsSec from './HomePg/sections/OurRooms/OurRoomsSec';
 
 const Home: NextPage = () => {
   return (
@@ -34,22 +35,28 @@ const Home: NextPage = () => {
             </section>
           </section> */}
 
-          {/* <section className='row noPadding pitchSec'>
-            <div className="curve"/>
-            <section className='col-12 d-flex justify-content-center align-items-center'>
-                <section className='pt-2'>
-                    <Logo width={100} height={100}/>
-                </section>
-            </section>
-            <section className='col-12 d-flex justify-content-center align-items-center'>
-                  <span className="largerFontSize">Hello!</span>
-            </section>
-            <section className='col-12'>
-            </section>
-          </section> */}
           
+          {/* this section will contain all of the rooms that the user can choose from */}
           <section className='row ps-5 pe-5 mt-5'>
-            <section className="col-12 pitchSec shadow">
+            <section className="col-12 homePgInfoSec ourRoomsSec shadow">
+              <section className="w-100 d-flex justify-content-center align-items-center pt-3">
+                <h3 className="display-3 d-flex">
+                  <span className="fst-italic">
+                    Enjoy Your Stay With Us
+                  </span>
+                  <span className='ms-2 d-block'>
+                    🏠!
+                  </span>
+                </h3>
+              </section>
+              <section className="roomMainSec w-100 d-flex justify-content-center align-items-center pt-4 ">
+                <OurRoomsSec/>
+              </section>
+            </section>
+          </section>
+
+          <section className='row ps-5 pe-5 mt-5 pb-5'>
+            <section className="col-12 pitchSec shadow pb-5">
               <section className='pt-2'>
                 <Logo width={100} height={100} />
               </section>
@@ -57,7 +64,7 @@ const Home: NextPage = () => {
                 <h3 className="display-3 fst-italic">Why choose us?</h3>
               </section>
               <section className="pitchTxtSec w-100 d-flex justify-content-center align-items-center pt-4">
-                <p className="display-6 text-center ps-3 pe-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia veniam unde quos natus culpa eligendi, ducimus, perferendis, tenetur qui quis dignissimos sapiente nulla aperiam sint similique vitae laudantium exercitationem. Sequi numquam quibusdam error voluptate reprehenderit magni impedit id adipisci ullam doloremque sit nisi deserunt necessitatibus veniam, quam incidunt placeat iste!</p>
+                <p className="display-6 text-center ps-4 pe-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia veniam unde quos natus culpa eligendi, ducimus, perferendis, tenetur qui quis dignissimos sapiente nulla aperiam sint similique vitae laudantium exercitationem. Sequi numquam quibusdam error voluptate reprehenderit magni impedit id adipisci ullam doloremque sit nisi deserunt necessitatibus veniam, quam incidunt placeat iste!</p>
               </section>
             </section>
           </section>
