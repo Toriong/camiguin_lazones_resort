@@ -175,6 +175,18 @@ li{
   height: 100%;
 }
 
+.darken{
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.parallax{
+  min-height: 500px !important; 
+  background-attachment: fixed !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
 .introToReviews{
   // background-color: $card-color;
   height: 200px;

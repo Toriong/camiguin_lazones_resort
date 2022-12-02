@@ -11,6 +11,8 @@ import Logo from 'layout/Logo';
 import IntroPicsSec from './HomePg/sections/IntroPicsSec';
 import OurRoomsSec from './HomePg/sections/OurRooms/OurRoomsSec';
 import { clientDomain } from '../data/appInfo';
+import IntroToReviews from './HomePg/sections/Reviews/IntroToReviews';
+import HospitalitySec from './HomePg/sections/HospitalitySec';
 
 
 const Home: NextPage = () => {
@@ -24,19 +26,8 @@ const Home: NextPage = () => {
         </Head>
         <main className="noPadding noMargin d-flex flex-column justify-content-start pb-2 min-vh-100">
           <IntroPicsSec />
-          <section className='row ps-5 pe-5 introToReviews bg-light pb-5 p-3'>
-            <section className='d-flex justify-content-center align-items-center'>
-                <Logo width={100} height={100}/>
-            </section>
-            <section className='d-flex justify-content-center align-items-center mt-2'>
-              <h4 className="display-6 fst-italic">4.8/5 ⭐ Stars On Google Reviews!</h4>
-            </section>
-          </section>
-          <section className='row noMargin noPadding flex-nowrap hospitalitySec'>
-            <section className='d-flex justify-content-center align-items-center col-12 position-relative' style={{ height: "800px"}}>
-              <Image src="/imgs/outsideBack.jpeg" alt="hospitalityImg_Camiguin_Resort" className='w-100 h-100' layout='fill'/>
-            </section>
-          </section>
+          <IntroToReviews/>
+          <HospitalitySec/>
 
           
           {/* this section will contain all of the rooms that the user can choose from */}
