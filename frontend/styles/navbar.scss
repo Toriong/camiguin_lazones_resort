@@ -1,0 +1,25 @@
+.logoSec{
+    /* border: solid pink; */
+    
+}
+
+.navbarStyles{
+    z-index: 100000000;
+}
+
+.unfixed-wrapper,
+.navbarStyles{
+    height: 125px !important;
+}
+
+.line{
+    height: 7px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    // transform: translate(-50%, -50%)
+}
+
+.sideBarNavBtn{
+    height:40px;
+}

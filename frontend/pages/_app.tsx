@@ -1,5 +1,5 @@
 import '../styles/globals.scss'
-import "../styles/navbar.css"
+import "../styles/navbar.scss"
 import "../styles/Pages/homePg.scss"
 import "../styles/Buttons/buttonStyles.scss"
 import 'bootstrap/dist/css/bootstrap.css'
