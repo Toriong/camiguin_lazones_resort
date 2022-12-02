@@ -98,7 +98,7 @@
   align-items: center;
   // height: 600px;
   border-radius: 20px;
-  background: $curve-color;
+  background: $card-color;
 }
 
 .roomsList{
@@ -114,7 +114,7 @@
   align-items: center;
   height: 600px;
   border-radius: 20px;
-  background: $curve-color;
+  background: $card-color;
 }
 
 .ourRoomsSec{
@@ -131,6 +131,10 @@
 .ourRoomsImg{
   width: 100px;
   height: 90px;
+}
+
+.hospitalitySec{
+  height: 700px;
 }
 
 
