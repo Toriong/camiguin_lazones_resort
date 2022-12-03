@@ -13,6 +13,7 @@ import OurRoomsSec from './HomePg/sections/OurRooms/OurRoomsSec';
 import { clientDomain } from '../data/appInfo';
 import IntroToReviews from './HomePg/sections/Reviews/IntroToReviews';
 import HospitalitySec from './HomePg/sections/HospitalitySec';
+import ReviewsCarousel from './HomePg/sections/Reviews/ReviewsCarousel';
 
 
 const Home: NextPage = () => {
@@ -62,6 +63,8 @@ const Home: NextPage = () => {
               </section>
             </section>
           </section>
+          <ReviewsCarousel/>
+
         </main>
 
         {/* <footer className={styles.footer}>
