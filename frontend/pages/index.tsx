@@ -14,11 +14,12 @@ import { clientDomain } from '../data/appInfo';
 import IntroToReviews from './HomePg/sections/Reviews/IntroToReviews';
 import HospitalitySec from './HomePg/sections/HospitalitySec';
 import ReviewsCarousel from './HomePg/sections/Reviews/ReviewsCarousel';
+import Layout from 'globalComps/Layout';
 
 
 const Home: NextPage = () => {
   return (
-    <>
+    <Layout title="Camiguin_Lazones_Resort_Home" description="The home page of Camiguin Lazones Resort" keywords='resort, Camiguin, hotel, stay' >
       <div className={`${styles.container} noPadding homePage min-vh-100`}>
         <Head>
           <title>Camiguin Lazones Resort Home Page</title>
@@ -80,7 +81,7 @@ const Home: NextPage = () => {
           </a>
         </footer> */}
       </div>
-    </>
+      </Layout>
   )
 }
 
