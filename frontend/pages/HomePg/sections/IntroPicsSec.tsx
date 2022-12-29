@@ -84,8 +84,6 @@ function IntroPicsSec() {
           <section className="position-relative w-100 mt-3">
             <span className="text-white infoTxtP slideUp position-absolute" key={infoTxtId}>{pics[currentPicIndex].infoTxt}</span>
           </section>
-          {/* only show this section below if the user is on either the first pic or on the last pic */}
-          {/* if the user is on the first pic, then show make a reservation button */}
           <section className="position-relative w-100 d-flex justify-content-center align-items-center">
               
           </section>
