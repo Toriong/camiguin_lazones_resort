@@ -5,7 +5,7 @@ import { FaAngleRight, FaAngleLeft, FaCircle, FaRegCircle } from 'react-icons/fa
 import Button from 'react-bootstrap/Button'
 import { useState, MouseEvent, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
-import { introPic } from 'interfaces/interfaces';
+import { introPic } from 'globalInterfaces/interfaces';
 import Image from "next/image"
 import Logo from 'layout/Logo';
 import IntroPicsSec from './HomePg/sections/IntroPicsSec';

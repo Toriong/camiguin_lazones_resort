@@ -8,19 +8,6 @@ const ReviewsCarousel = () => {
     const [index, setIndex] = useState(0);
     const { reviewer, review } = reviews[index];
 
-
-
-    // useEffect(() => {
-    //     let intervalTimer = setInterval(() => {
-    //         if (index === 2) {
-    //             setIndex(0);
-    //         } else {
-    //             setIndex(index + 1);
-    //         }
-    //     }, 4000);
-    //     return () => { clearInterval(intervalTimer); }
-    // }, [index]);
-
     return (
         <section className='row ps-5 pe-5 mt-5 pb-5'>
             <div className="slider">
@@ -49,6 +36,7 @@ const ReviewsCarousel = () => {
                     </div>
                 </section>
             </div>
+        
         </section>
     )
 

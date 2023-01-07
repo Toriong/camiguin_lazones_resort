@@ -1,6 +1,6 @@
 import { randomUUID } from "crypto";
 import MakeReservation from "globalBtns/MakeReservation";
-import { introPic } from "interfaces/interfaces";
+import { introPic } from "globalInterfaces/interfaces";
 import { useState } from "react";
 import { FaCircle, FaRegCircle } from "react-icons/fa";
 import { v4 as uuidv4 } from "uuid";
