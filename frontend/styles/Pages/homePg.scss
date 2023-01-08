@@ -86,6 +86,15 @@
   animation: slideUp 2s forwards !important
 }
 
+.makeReservationDiv{
+  button{
+    position: absolute !important;
+    margin-bottom: 110px;
+    width: 200px !important;
+    height: 80px !important;
+  }
+}
+
 @keyframes slideUp {
   100% { transform: translateY(0px) }
 }

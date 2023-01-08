@@ -21,6 +21,7 @@ const HospitalitySec = () => {
     const callUsRefId = uuidv4();
     const bookNowRefId = uuidv4();
     const filipinoExperienceId = uuidv4();
+    const btnContainerId = uuidv4();
 
     useEffect(() => {
         const observer = new IntersectionObserver(entries => {
@@ -60,8 +61,8 @@ const HospitalitySec = () => {
                         </i>
                     </span>
                 </div>
-                <div className="makeReservationDiv w-100 d-flex justify-content-center align-items-center">
-                    <MakeReservation btnTxt={"Book now!"} />
+                <div className="makeReservationDiv fs-larger w-100 d-flex justify-content-center align-items-center" key={btnContainerId}>
+                    <MakeReservation btnTxt={"BOOK NOW!"} isPulsing isSlideUp />
                 </div>
             </Parallax>
         </section>
