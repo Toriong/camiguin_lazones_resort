@@ -2,15 +2,20 @@ import React from 'react';
 import Button from 'react-bootstrap/Button'
 
 
-// BRAIN DUMP:
-// this button can have dynamic button css classes depending on the viewport 
+
 interface Props {
-    buttonKeyForRerender: String
+    buttonKeyForRerender?: String
+    btnTxt?: String,
+    isSlideUp?: boolean
+    isPulsing?: boolean
 }
 
 
-const MakeReservation: React.FC<Props> = ({ buttonKeyForRerender }) => {
-    return <Button key={buttonKeyForRerender as string} variant="primary" className="pt-3 makeReservationBtnStyles ps-4 pe-4 pb-3 position-absolute rounded text-white medFontWeight largeFontSize slideLeft">Make a reservation</Button>
+function MakeReservation({ buttonKeyForRerender, btnTxt, isSlideUp, isPulsing }: Props) {
+    let _className = `pt-3 makeReservationBtnStyles ps-4 pe-4 pb-3 position-absolute rounded text-white medFontWeight largeFontSize ${isSlideUp ? 'slideUp' : 'slideLeft'}`
+    _className = isPulsing ? (_className + ' pulse') : _className
+
+    return <Button key={buttonKeyForRerender as string} variant="primary" className={_className}>{btnTxt ?? "Make a reservation"}</Button>
 }
 
 export default MakeReservation;

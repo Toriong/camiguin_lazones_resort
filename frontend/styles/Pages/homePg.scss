@@ -52,10 +52,29 @@
 
 // GOAL: make move from left to right (from -100px to 0px)
 
+.slide-out {
+  transform: translateX(-100%);
+}
+
+.slide-in {
+  animation: slide 0.5s forwards;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 .slideRight {
   transform: translateX(-100px);
   animation: slideRight 2s forwards !important;
 }
+
+
 
 .slideLeft {
   transform: translateX(100px);
@@ -75,6 +94,7 @@
   0% { opacity: 0}
   100%{ opacity: 1; transform: translateX(0px)}
 }
+
 
 @keyframes slideLeft {
   0% { opacity: 0}
@@ -114,6 +134,8 @@
 .homePgCardColor{
   background: $card-color !important;;
 }
+
+
 
 .txtHospitalitySec{
   position: absolute;

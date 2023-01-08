@@ -33,7 +33,7 @@ li{
 
 .flicker{
   animation-name: flicker !important;
-  animation-duration: 2s;
+  animation-duration: 3s;
 }
 
 
@@ -55,7 +55,7 @@ li{
 
 .flickerFaster{
   animation-name: flickerFaster !important;
-  animation-duration: 1s
+  animation-duration: 1.5s
 }
 
 @keyframes flickerFaster {
@@ -117,6 +117,9 @@ li{
   animation-delay: 2.5s;
   z-index: -1;
 }
+
+
+
 
 .fade {
   animation-name: fade;

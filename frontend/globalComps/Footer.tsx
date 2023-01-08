@@ -3,18 +3,19 @@ import { MDBFooter } from 'mdb-react-ui-kit';
 import { AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import moment from 'moment'
 import { businessNum } from 'data/appInfo';
-import FacebookBtn from 'globalBtns/FaceBookBtn';
+import FacebookBtn from '../globalBtns/FacebookBtn';
 import TwitterBtn from 'globalBtns/TwitterBtn';
 import InstagramBtn from 'globalBtns/Instagram';
 import Logo from 'layout/Logo';
+import { useRef } from 'react';
 
 
 const Footer = () => {
     const currentYear = moment().year();
 
-    const handlePhoneNumClick = () => { window.open(`tel:+${businessNum}`) };
+    function handlePhoneNumClick(){ window.open(`tel:+${businessNum}`) };
 
-    const handleEmailClick = () => {
+    function handleEmailClick(){
 
     }
 
