@@ -161,7 +161,9 @@ li{
 
 
 
-
+.fwt-med{
+  font-weight: 249px !important;
+}
 
 .curve::before{
   width: 50%;
@@ -177,7 +179,7 @@ li{
 
 .darken-overlay{
   background-color: rgba(0, 0, 0, .3) !important;;
-  z-index: 5;
+  // z-index: 5;
 }
 
 

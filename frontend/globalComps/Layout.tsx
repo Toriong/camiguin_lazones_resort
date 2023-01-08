@@ -1,5 +1,6 @@
 import NavBar from "layout/navbar/NavBar";
 import Head from "next/head";
+import Footer from "./Footer";
 
 
 interface Props {
@@ -25,7 +26,7 @@ function Layout({title, description, keywords, children}: Props) {
 
             {children}
 
-
+            <Footer/>
         </div>
     );
 }
