@@ -1,43 +1,57 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from 'react';
-import { v4 as uuid } from 'uuid';
-import reviews from '../../../../data/reviews.json'
 import Review from './Review'
+import Card from 'react-bootstrap/Card'
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+import { BsCircleFill, BsCircle, BsFillPlayCircleFill, BsFillPauseCircleFill } from 'react-icons/bs'
+import Carousel from 'globalComps/Carousel';
+
+const { Body, Header } = Card;
+interface ReviewObj {
+    reviewer: string,
+    review: string
+}
+
+interface Props {
+    reviews: ReviewObj[]
+}
 
 
-const ReviewsCarousel = () => {
+function ReviewsCarousel({ reviews }: Props) {
     const [index, setIndex] = useState(0);
-    const { reviewer, review } = reviews[index];
+    const [isCarouselPaused, setIsCarouselPaused] = useState(false)
+    const BULL_POINT_INDEX_NUMS = reviews.map((_, index) => index);
+
+    function handleNavBtnClick(num: number) {
+        setIsCarouselPaused(true)
+        setIndex(prevIndex => {
+            const wasBackBtnPressed = -1 === Math.sign(num);
+
+            if ((prevIndex === 0) && wasBackBtnPressed) return reviews.length - 1;
+
+            if ((prevIndex === (reviews.length - 1)) && wasBackBtnPressed) return (prevIndex + num);
+
+            return (prevIndex === (reviews.length - 1)) ? 0 : (prevIndex + num);
+        })
+    }
+
+    function handlePausePlayBtnClick(){
+        setIsCarouselPaused(isCarouselPaused => !isCarouselPaused)
+    }
+
+    function handleBulletPtClick(num: number){
+        setIndex(num);
+    }
 
     return (
-        <section className='row ps-5 pe-5 mt-5 pb-5'>
-            <div className="slider">
-                <a href="#slide-1" className='text-decoration-none'></a>
-                <a href="#slide-2" className='text-decoration-none'>2</a>
-                <a href="#slide-3" className='text-decoration-none'>3</a>
-                <a href="#slide-4" className='text-decoration-none'>4</a>
-                <a href="#slide-5" className='text-decoration-none'>5</a>
-                <section className="d-flex justify-content-center align-items-center">
-                    <div className="slides d-flex">
-                        <div id="slide-1">
-                            1
-                        </div>
-                        <div id="slide-2">
-                            2
-                        </div>
-                        <div id="slide-3">
-                            3
-                        </div>
-                        <div id="slide-4">
-                            4
-                        </div>
-                        <div id="slide-5">
-                            5
-                        </div>
-                    </div>
-                </section>
-            </div>
-        
-        </section>
+        <Card className='homePgCardColor reviewsCard shadow border-0'>
+            <Header className="d-flex justify-content-center align-items-center bg-transparent border-0">
+                <h2 className="fwt-800 fs-larger">Reviews</h2>
+            </Header>
+            <Body className="position-relative reviewsCardBody">
+                <Carousel reviews={reviews}/>
+            </Body>
+        </Card>
     )
 
 }

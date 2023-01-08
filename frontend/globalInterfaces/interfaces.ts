@@ -5,3 +5,11 @@ export interface introPic{
     infoTxt: String
 }
 
+interface ReviewObj {
+    reviewer: string,
+    review: string
+}
+
+export interface CarouselProps {
+    reviews: ReviewObj[]
+}

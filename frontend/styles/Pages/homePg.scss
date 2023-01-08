@@ -68,7 +68,6 @@
 }
 
 @keyframes slideUp {
-  // 0% { transform: translateY(105px)}
   100% { transform: translateY(0px) }
 }
 
@@ -83,13 +82,8 @@
 }
 
 .introPicTxtInnerSec{
-  // width: 00px !important;
   height: 100px;
 }
-
-// .introPicTxtInnerSec{
-//   width: fit-content !imp
-// }
 
 .roomsMainSec,
 .pitchSec {
@@ -97,7 +91,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // height: 600px;
   border-radius: 20px;
   background: $card-color;
 }
@@ -118,8 +111,16 @@
   background: $card-color;
 }
 
+.homePgCardColor{
+  background: $card-color !important;;
+}
+
 .ourRoomsSec{
   height: fit-content;;
+}
+
+.reviewsCard{
+  // height: 600px !important;
 }
 
 .roomMainSec {

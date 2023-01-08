@@ -15,6 +15,7 @@ import IntroToReviews from './HomePg/sections/Reviews/IntroToReviews';
 import HospitalitySec from './HomePg/sections/HospitalitySec';
 import ReviewsCarousel from './HomePg/sections/Reviews/ReviewsCarousel';
 import Layout from 'globalComps/Layout';
+import Reviews from '../data/reviews.json'
 
 
 const Home: NextPage = () => {
@@ -28,10 +29,10 @@ const Home: NextPage = () => {
         </Head>
         <main className="noPadding noMargin d-flex flex-column justify-content-start pb-2 min-vh-100">
           <IntroPicsSec />
-          <IntroToReviews/>
-          <HospitalitySec/>
+          <IntroToReviews />
+          <HospitalitySec />
 
-          
+
           {/* this section will contain all of the rooms that the user can choose from */}
           <section className='row ps-5 pe-5 mt-5'>
             <section className="col-12 homePgInfoSec ourRoomsSec shadow">
@@ -46,11 +47,10 @@ const Home: NextPage = () => {
                 </h3>
               </section>
               <section className="roomMainSec w-100 d-flex justify-content-center align-items-center pt-4 ">
-                <OurRoomsSec/>
+                <OurRoomsSec />
               </section>
             </section>
           </section>
-
           <section className='row ps-5 pe-5 mt-5 pb-5'>
             <section className="col-12 pitchSec shadow pb-5">
               <section className='pt-2'>
@@ -64,7 +64,9 @@ const Home: NextPage = () => {
               </section>
             </section>
           </section>
-          <ReviewsCarousel/>
+          <section className="row ps-5 pe-5 mt-5 pb-5">
+            <ReviewsCarousel reviews={Reviews} />
+          </section>
 
         </main>
 
@@ -81,7 +83,7 @@ const Home: NextPage = () => {
           </a>
         </footer> */}
       </div>
-      </Layout>
+    </Layout>
   )
 }
 
