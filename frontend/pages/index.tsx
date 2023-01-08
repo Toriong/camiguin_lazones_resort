@@ -16,6 +16,8 @@ import HospitalitySec from './HomePg/sections/HospitalitySec';
 import ReviewsCarousel from './HomePg/sections/Reviews/ReviewsCarousel';
 import Layout from 'globalComps/Layout';
 import Reviews from '../data/reviews.json'
+import MapSection from 'globalComps/Map';
+import Map from 'globalComps/Map';
 
 
 const Home: NextPage = () => {
@@ -67,21 +69,22 @@ const Home: NextPage = () => {
           <section className="row ps-5 pe-5 mt-5 pb-5">
             <ReviewsCarousel reviews={Reviews} />
           </section>
+          <section>
+            <section className="w-100 border-bottom">
+              <h3 className="display-6 fst-italic w-100 text-center">Our address: </h3>
+              <h6 className="display-6 fst-italic w-100 text-center">
+                <a href="" className="text-decoration-none text-dark underline-hover">
+                6PRM+4WR, Mambajao, Camiguin, Philippines
+                </a>
+              </h6>
+              <h6 className="display-6 fst-italic w-100 text-center">See you soon!</h6>
+            </section>
+            <section className="d-flex justify-content-center align-items-center businessMapSec">
+              <Map />
+            </section>
+          </section>
 
         </main>
-
-        {/* <footer className={styles.footer}>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by{' '}
-            <span className={styles.logo}>
-              <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-            </span>
-          </a>
-        </footer> */}
       </div>
     </Layout>
   )

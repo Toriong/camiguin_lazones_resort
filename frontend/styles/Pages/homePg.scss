@@ -1,13 +1,11 @@
-@import '../globals.scss';
-@import './HomePgCompStyles/IntroPicsSec.scss';
-
-
+@import "../globals.scss";
+@import "./HomePgCompStyles/IntroPicsSec.scss";
 
 .introPicsSec {
   height: 720px !important;
 }
 
-.introPicTxt{
+.introPicTxt {
   // border: solid pink !important;
   z-index: 10;
 }
@@ -18,13 +16,13 @@
   }
 }
 
-.hiTxt{
+.hiTxt {
   width: 250px !important;
   transform: translate(370px, 100px);
   // border: solid pink !important;
 }
 
-.introPicHeading{
+.introPicHeading {
   font-size: 70px;
   font-style: normal;
   // width: 200px !important;
@@ -33,17 +31,17 @@
   font-family: Roboto !important;
 }
 
-.txtSpan{
+.txtSpan {
   border: solid green;
   // width: 185px !important
 }
 
-.infoTxtP{
+.infoTxtP {
   font-weight: 400;
   font-size: 21px;
 }
 
-.circleBtn{
+.circleBtn {
   font-size: 26px !important;
 }
 
@@ -74,20 +72,18 @@
   animation: slideRight 2s forwards !important;
 }
 
-
-
 .slideLeft {
   transform: translateX(100px);
   animation: slideLeft 2s forwards !important;
 }
 
-.slideUp{
+.slideUp {
   transform: translateY(105px);
-  animation: slideUp 2s forwards !important
+  animation: slideUp 2s forwards !important;
 }
 
-.makeReservationDiv{
-  button{
+.makeReservationDiv {
+  button {
     position: absolute !important;
     margin-bottom: 110px;
     width: 200px !important;
@@ -95,22 +91,45 @@
   }
 }
 
+.businessMapSec {
+  figure {
+    border: solid pink !important;
+    position: relative !important;
+    img {
+      position: absolute !important;
+      top: calc(50% - 125px);
+      left: calc(50% - 190px);
+    }
+  }
+}
+
 @keyframes slideUp {
-  100% { transform: translateY(0px) }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @keyframes slideRight {
-  0% { opacity: 0}
-  100%{ opacity: 1; transform: translateX(0px)}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
-
 
 @keyframes slideLeft {
-  0% { opacity: 0}
-  100%{ opacity: 1; transform: translateX(0px)}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
-.introPicTxtInnerSec{
+.introPicTxtInnerSec {
   height: 100px;
 }
 
@@ -124,13 +143,11 @@
   background: $card-color;
 }
 
-.roomsList{
+.roomsList {
   column-count: 2;
 }
 
-
-
-.homePgInfoSec{
+.homePgInfoSec {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -140,52 +157,43 @@
   background: $card-color;
 }
 
-.homePgCardColor{
-  background: $card-color !important;;
+.homePgCardColor {
+  background: $card-color !important;
 }
 
-
-
-.txtHospitalitySec{
+.txtHospitalitySec {
   position: absolute;
   top: 60px;
   left: 50px !important;
 }
 
-.ourRoomsSec{
-  height: fit-content;;
+.ourRoomsSec {
+  height: fit-content;
 }
 
-.reviewsCard{
+.reviewsCard {
   // height: 600px !important;
 }
 
 .roomMainSec {
-  img{
+  img {
     width: 100%;
     height: 300px;
   }
 }
 
-.ourRoomsImg{
+.ourRoomsImg {
   width: 100px;
   height: 90px;
 }
 
-.hospitalitySec{
+.hospitalitySec {
   height: 800px;
 }
 
-.hospitalitySecImg{
+.hospitalitySecImg {
   // background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-
-
-
-
-
-
