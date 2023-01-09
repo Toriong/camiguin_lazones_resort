@@ -92,15 +92,6 @@
 }
 
 .businessMapSec {
-  figure {
-    border: solid pink !important;
-    position: relative !important;
-    img {
-      position: absolute !important;
-      top: calc(50% - 125px);
-      left: calc(50% - 190px);
-    }
-  }
 }
 
 @keyframes slideUp {

@@ -59,7 +59,7 @@ function IntroPicsSec() {
         />
         <HiAnimations/>
         <div className="overlay position-absolute w-100 h-100 flicker" />
-        <section className="w-50 h-75 introPicTxt d-flex flex-column pt-4">
+        <section className="w-50 h-75 introPicTxt d-flex flex-column pt-4 position-relative">
           {/* create an overlay don't will disappear within 2 seconds. Have its width decrease by 50% with each 2 seconds */}
           <section className="position-relative w-100 introPicTxtInnerSec mt-5 pt-3">
             <div

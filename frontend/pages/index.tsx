@@ -73,13 +73,13 @@ const Home: NextPage = () => {
             <section className="w-100 border-bottom">
               <h3 className="display-6 fst-italic w-100 text-center">Our address: </h3>
               <h6 className="display-6 fst-italic w-100 text-center">
-                <a href="" className="text-decoration-none text-dark underline-hover">
+                <a href="https://www.google.com/maps/place/Camiguin+Lanzones+Resort/@9.2403596,124.7325741,17z/data=!3m1!4b1!4m8!3m7!1s0x3300652515202d8d:0x7acb4a0181d6bd8a!5m2!4m1!1i2!8m2!3d9.2404019!4d124.7347173" rel="noreferrer" target="_blank" className="text-decoration-none text-dark underline-hover">
                 6PRM+4WR, Mambajao, Camiguin, Philippines
                 </a>
               </h6>
-              <h6 className="display-6 fst-italic w-100 text-center">See you soon!</h6>
+              <h6 className="display-6 fst-italic w-100 text-center d-flex justify-content-center align-items-center">See you soon <span className='ms-2 shake'>👋</span> <span className="ms-2">!</span></h6>
             </section>
-            <section className="d-flex justify-content-center align-items-center businessMapSec">
+            <section className="d-flex justify-content-center align-items-center businessMapSec pt-4 pb-4">
               <Map />
             </section>
           </section>

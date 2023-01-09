@@ -186,6 +186,26 @@ li{
 }
 
 
+.shake {
+  animation: shake 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+  transition-timing-function: ease;
+  transform: rotate(45deg);
+}
+
+@keyframes shake {
+  from {
+      transform: rotate(45deg);
+  }
+
+  50% {
+      transform: rotate(-5deg);
+  }
+
+  to {
+      transform: rotate(45deg);
+  }
+}
+
 .underline-hover:hover{
   text-decoration: underline !important;;
 }

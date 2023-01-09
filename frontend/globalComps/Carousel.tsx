@@ -94,8 +94,8 @@ function Carousel({ reviews }: CarouselProps) {
                 </div>
                 <section className='d-flex flex-column justify-content-center align-items-center pb-1 mt-sm-0'>
                     <section className="w-100 d-flex justify-content-center align-items-center">
-                        {BULL_POINT_INDEX_NUMS.map((num, index) => (
-                            (num === index) ? <BsCircleFill className="text-dark ms-1" key={index} /> : <BsCircle key={index} className="text-dark ms-1" onClick={() => { handleBulletPtClick(num) }} />
+                        {BULL_POINT_INDEX_NUMS.map((num, _index) => (
+                            (num === index) ? <BsCircleFill className="text-dark ms-1" key={_index} /> : <BsCircle key={_index} className="text-dark ms-1" onClick={() => { handleBulletPtClick(num) }} />
                         ))}
                     </section>
                     <section className="d-flex justify-content-center align-items-center mt-3">
