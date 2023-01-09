@@ -63,15 +63,12 @@ function IntroPicsSec() {
             />
           )
         })}
-        <HiAnimations />
         <div className="overlay position-absolute w-100 h-100 flicker" />
-        <section className="w-50 h-75 introPicTxt d-flex flex-column pt-4 position-relative">
-          {/* create an overlay don't will disappear within 2 seconds. Have its width decrease by 50% with each 2 seconds */}
+        <section className="w-50 introPicTxt d-flex flex-column pt-0 pt-lg-4 position-relative">
+          <section className="position-relative">
+            <HiAnimations />
+          </section>
           <section className="position-relative w-100 introPicTxtInnerSec mt-5 pt-3">
-            <div
-              style={{ zIndex: 100 }}
-              className="h-100 w-75 position-absolute end-0 overlayForTxt"
-            />
             <h1
               key={introPicTxtId}
               className="text-white introPicHeading text-nowrap d-flex"
@@ -87,11 +84,11 @@ function IntroPicsSec() {
               })}
             </h1>
           </section>
-          <section className="position-relative w-100 mt-3 border introPicTxt">
+          <section className="position-relative w-100 mt-3 introPicTxtSec">
             <span className="text-white infoTxtP slideUp position-absolute" key={infoTxtId}>{pics[currentPicIndex].infoTxt}</span>
           </section>
-          <section className="position-relative w-100 d-flex justify-content-center align-items-center">
-
+          <section className="position-relative w-100 d-flex justify-content-center align-items-center btnContainerIntroPics">
+            <MakeReservation buttonKeyForRerender={uuidv4()} />
           </section>
         </section>
         <div className="position-absolute bottom-0 d-flex justify-content-center align-items-center w-100 mb-5">
@@ -117,7 +114,6 @@ function IntroPicsSec() {
             )}
           </div>
         </div>
-        <MakeReservation buttonKeyForRerender={uuidv4()} />
       </section>
     </section>
   );

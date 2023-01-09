@@ -14,6 +14,45 @@
   transition: ease 1000ms;
 }
 
-.introPicTxt{
-  height: 300px !important;
+.introPicTxtSec{
+  height: 500px !important;
+  
+  // border: solid pink !important;
+}
+
+.introPicsBtnSlideLeft{
+  // transform: translate(-150px, -50%) !important;
+  opacity: 0;
+  transform: translateX(-125px);
+  // border: solid pink !important;
+  animation: slideLeft 2s forwards !important;
+}
+
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+  }
+  25%{
+    opacity: .2;
+  }
+  50%{
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.btnContainerIntroPics{
+  // border: solid pink !important;
+  height: 200px !important;
+  button{
+    @media (min-width: 1140px){
+      top: -5% !important;
+
+    }
+    // transform: translate(-50%, -50%);
+    // left: 50% !important;
+  }
 }

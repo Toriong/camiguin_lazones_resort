@@ -3,10 +3,17 @@
 
 .introPicsSec {
   height: 720px !important;
+  @media(min-width: 768px) and (max-width: 991px){
+    height: 820px !important;
+  }
 }
 
 .introPicTxt {
   // border: solid pink !important;
+  height: 75% !important;
+  @media (max-width: 991px){
+    // height: 50% !important;
+  }
   z-index: 10;
 }
 
@@ -18,7 +25,7 @@
 
 .hiTxt {
   width: 250px !important;
-  transform: translate(370px, 100px);
+  // transform: translate(370px, 100px);
   // border: solid pink !important;
 }
 
@@ -72,8 +79,10 @@
   animation: slideRight 2s forwards !important;
 }
 
+
 .slideLeft {
-  transform: translateX(100px);
+  // transform: translateX(100px);
+  // transform: translate(100px, -50%);
   animation: slideLeft 2s forwards !important;
 }
 
@@ -96,7 +105,7 @@
 
 .homePage{
   // width: fit-content !important;
-  overflow: hidden !important;
+  overflow: hidden !important;;
    *{
     // border: solid pink !important;
 
