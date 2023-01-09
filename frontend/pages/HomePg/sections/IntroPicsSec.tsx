@@ -51,13 +51,25 @@ function IntroPicsSec() {
   return (
     <section className="row noMargin noPadding introPicsSec flex-nowrap">
       <section className="border-bottom col-12 border noPadding noMargin introPicsSubSec position-relative d-flex justify-content-center align-items-center">
-        <img
+        {/* <img
           key={picId}
           src={`/imgs/${pics[currentPicIndex].path}.jpeg`}
           alt="camiguin_lazones_resort_introPic"
           className="w-100 h-100 position-absolute flicker"
-        />
-        <HiAnimations/>
+        /> */}
+        {pics.map(pic => {
+          const { path, isOnUI } = pic
+          const _className = isOnUI ? "w-100 h-100 position-absolute flicker" : "w-100 h-100 position-absolute flicker d-none"
+          return (
+            <img
+              key={picId}
+              src={`/imgs/${path}.jpeg`}
+              alt="camiguin_lazones_resort_introPic"
+              className={_className}
+            />
+          )
+        })}
+        <HiAnimations />
         <div className="overlay position-absolute w-100 h-100 flicker" />
         <section className="w-50 h-75 introPicTxt d-flex flex-column pt-4 position-relative">
           {/* create an overlay don't will disappear within 2 seconds. Have its width decrease by 50% with each 2 seconds */}
@@ -72,11 +84,11 @@ function IntroPicsSec() {
             >
               {pics[currentPicIndex].picTxts.map((text, index) => {
                 const key = uuidv4();
-                
+
                 return (
-                    <p key={key} className={`slideRight w-fitContent ${index !== 0 ? 'ms-4' : ''}`}>
-                      {text}
-                    </p>
+                  <p key={key} className={`slideRight w-fitContent ${index !== 0 ? 'ms-4' : ''}`}>
+                    {text}
+                  </p>
                 );
               })}
             </h1>
@@ -85,7 +97,7 @@ function IntroPicsSec() {
             <span className="text-white infoTxtP slideUp position-absolute" key={infoTxtId}>{pics[currentPicIndex].infoTxt}</span>
           </section>
           <section className="position-relative w-100 d-flex justify-content-center align-items-center">
-              
+
           </section>
         </section>
         <div className="position-absolute bottom-0 d-flex justify-content-center align-items-center w-100 mb-5">
@@ -111,7 +123,7 @@ function IntroPicsSec() {
             )}
           </div>
         </div>
-        <MakeReservation buttonKeyForRerender={uuidv4()}/>
+        <MakeReservation buttonKeyForRerender={uuidv4()} />
       </section>
     </section>
   );
