@@ -51,12 +51,6 @@ function IntroPicsSec() {
   return (
     <section className="row noMargin noPadding introPicsSec flex-nowrap">
       <section className="border-bottom col-12 border noPadding noMargin introPicsSubSec position-relative d-flex justify-content-center align-items-center">
-        {/* <img
-          key={picId}
-          src={`/imgs/${pics[currentPicIndex].path}.jpeg`}
-          alt="camiguin_lazones_resort_introPic"
-          className="w-100 h-100 position-absolute flicker"
-        /> */}
         {pics.map(pic => {
           const { path, isOnUI } = pic
           const _className = isOnUI ? "w-100 h-100 position-absolute flicker" : "w-100 h-100 position-absolute flicker d-none"
@@ -93,7 +87,7 @@ function IntroPicsSec() {
               })}
             </h1>
           </section>
-          <section className="position-relative w-100 mt-3">
+          <section className="position-relative w-100 mt-3 border introPicTxt">
             <span className="text-white infoTxtP slideUp position-absolute" key={infoTxtId}>{pics[currentPicIndex].infoTxt}</span>
           </section>
           <section className="position-relative w-100 d-flex justify-content-center align-items-center">

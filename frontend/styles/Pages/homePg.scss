@@ -94,6 +94,15 @@
 .businessMapSec {
 }
 
+.homePage{
+  // width: fit-content !important;
+  overflow: hidden !important;
+   *{
+    // border: solid pink !important;
+
+  }
+}
+
 @keyframes slideUp {
   100% {
     transform: translateY(0px);

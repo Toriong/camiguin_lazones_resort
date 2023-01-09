@@ -1,7 +1,5 @@
 import { GOOGLE_API_KEY } from '../secureInfo';
 import { longAndLatOfResort } from '../data/appInfo'
-import Image from 'next/image'
-import useGetViewPortWidth from 'customHooks/useGetWidth';
 
 const {lat, long } = longAndLatOfResort
 
