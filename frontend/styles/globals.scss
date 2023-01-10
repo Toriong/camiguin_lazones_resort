@@ -139,6 +139,12 @@ li{
   z-index: -1;
 }
 
+.h4Tag{
+  @media(max-width: 575px){
+    font-size: 20.5px !important;
+  }
+}
+
 .curve {
   position: absolute;
   height: 250px;

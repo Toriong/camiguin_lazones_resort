@@ -13,7 +13,7 @@ interface Props {
 
 
 function MakeReservation({ buttonKeyForRerender, btnTxt, isSlideUp, isPulsing, isBtnLarger }: Props) {
-    let _className = `pt-3 makeReservationBtnStyles ps-4 pe-4 pb-3 position-absolute rounded text-white medFontWeight largeFontSize ${isSlideUp ? 'slideUp' : 'introPicsBtnSlideLeft'}`
+    let _className = `pt-3 ps-4 pe-4 pb-3 position-absolute rounded text-white medFontWeight largeFontSize ${isSlideUp ? 'slideUp' : 'introPicsBtnSlideLeft makeReservationBtnStyles'}`
     _className = isPulsing ? (_className + ' pulse') : _className
 
 

@@ -42,6 +42,13 @@
   }
 }
 
+.googleReviewsTxt{
+  @media(max-width: 575px){
+    min-width: 100vw
+  }
+}
+
+
 .introPicHeading {
   font-size: 70px;
   font-style: normal;
@@ -127,12 +134,31 @@
   animation: slideUp 2s forwards !important;
 }
 
+.slideUpBookNowBtn{
+  transform: translateY(90px);
+  animation: slideUpBookNowBtn 2s forwards !important;
+}
+
+.hospitalityTxt{
+  @media(max-width: 767px){
+    // border: solid pink !important;
+    display: flex !important;
+    min-width: 100vw !important;;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
 .makeReservationDiv {
   button {
     position: absolute !important;
-    margin-bottom: 110px;
+    margin-top: 220px;
     width: 200px !important;
     height: 80px !important;
+
+    @media(max-width: 991px){
+      margin-top: 400px;
+    }
   }
 }
 
@@ -145,6 +171,12 @@
    *{
     // border: solid pink !important;
 
+  }
+}
+
+@keyframes slideUpBookNowBtn {
+  100% {
+    transform: translateY(50px);
   }
 }
 
@@ -214,7 +246,9 @@
 .txtHospitalitySec {
   position: absolute;
   top: 60px;
-  left: 50px !important;
+  @media (min-width: 768px) {
+    left: 50px !important;
+  }
 }
 
 .ourRoomsSec {
@@ -239,6 +273,10 @@
 
 .hospitalitySec {
   height: 800px;
+
+  @media (max-width: 575px) {
+    height: 1460px;
+  }
 }
 
 .hospitalitySecImg {
