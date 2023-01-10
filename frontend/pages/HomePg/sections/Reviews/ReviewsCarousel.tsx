@@ -46,7 +46,7 @@ function ReviewsCarousel({ reviews }: Props) {
     return (
         <Card className='homePgCardColor reviewsCard shadow border-0'>
             <Header className="d-flex justify-content-center align-items-center bg-transparent border-0">
-                <h2 className="fwt-800 fs-larger">Google/Facebook Reviews</h2>
+                <h2 className="fwt-800 fs-larger reviewsTxt">Google/Facebook Reviews</h2>
             </Header>
             <Body className="position-relative reviewsCardBody">
                 <Carousel reviews={reviews}/>

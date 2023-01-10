@@ -233,6 +233,14 @@
   }
 }
 
+.reviewsMainSec{
+  @media(max-width: 575px){
+    display: flex !important;
+    // width: 80% !important; 
+    // min-width: 260px !important;
+  }
+}
+
 .homePgInfoSec {
   position: relative;
   display: flex;
@@ -245,6 +253,10 @@
 
 .homePgCardColor {
   background: $card-color !important;
+
+  @media(max-width: 575px){
+    width: 800px !important;
+  }
 }
 
 .txtHospitalitySec {
@@ -264,6 +276,10 @@
 }
 
 .reviewsCard {
+  @media(max-width: 575px){
+    width: 80%!important;
+    min-width: 260px!important;
+  }
   // height: 600px !important;
 }
 
@@ -337,4 +353,13 @@
   @media(max-width: 575px){
     min-width: 240px !important;
   }
+}
+
+.reviewsTxt{
+  @media(max-width: 575px){}
+  font-size: 20px !important;
+  text-align: center !important;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

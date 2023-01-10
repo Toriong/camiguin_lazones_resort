@@ -45,7 +45,7 @@ const Home: NextPage = () => {
                   </span>
                 </h3>
               </section>
-              <section className="roomMainSec w-100 d-flex justify-content-center align-items-center pt-4 ">
+              <section className="roomMainSec w-100 d-flex justify-content-center align-items-center pt-4">
                 <OurRoomsSec />
               </section>
             </section>
@@ -63,15 +63,22 @@ const Home: NextPage = () => {
               </section>
             </section>
           </section>
-          <section className="row ps-5 pe-5 mt-5 pb-5">
-            <ReviewsCarousel reviews={Reviews} />
+          {/* row ps-5 pe-5 mt-5 pb-5 */}
+          {/* d-flex justify-content-center align-items-sm-start align-items-center justify-content-sm-start */}
+          {/* d-flex justify-content-center align-items-center */}
+          {/* d-flex justify-content-center align-items-center */}
+          {/* d-flex d-flex d-block justify-content-center justify-content-sm-start align-items-center align-items-sm-stretch */}
+          <section className="row ps-sm-5 pe-sm-5 mt-5 pb-5 d-flex justify-content-center align-items-center">
+            <section className="ourRoomsSec pt-4 reviewsMainSec justify-content-sm-start justify-content-center align-items-center align-items-sm-stretch w-100">
+              <ReviewsCarousel reviews={Reviews} />
+            </section>
           </section>
           <section>
             <section className="w-100 border-bottom">
               <h3 className="display-6 fst-italic w-100 text-center">Our address: </h3>
               <h6 className="display-6 fst-italic w-100 text-center">
                 <a href="https://www.google.com/maps/place/Camiguin+Lanzones+Resort/@9.2403596,124.7325741,17z/data=!3m1!4b1!4m8!3m7!1s0x3300652515202d8d:0x7acb4a0181d6bd8a!5m2!4m1!1i2!8m2!3d9.2404019!4d124.7347173" rel="noreferrer" target="_blank" className="text-decoration-none text-dark underline-hover">
-                6PRM+4WR, Mambajao, Camiguin, Philippines
+                  6PRM+4WR, Mambajao, Camiguin, Philippines
                 </a>
               </h6>
               <h6 className="display-6 fst-italic w-100 text-center d-flex justify-content-center align-items-center">See you soon <span className='ms-2 shake'>👋</span> <span className="ms-2">!</span></h6>
