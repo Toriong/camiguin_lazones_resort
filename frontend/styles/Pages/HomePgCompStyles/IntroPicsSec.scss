@@ -21,6 +21,11 @@
 
   @media (max-width: 767px) {
     height: 400px !important;
+    // border: solid green !important;
+    min-width: 383px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -30,7 +35,7 @@
   // border: solid pink !important;
 
   @media(max-width: 767px){
-    width: 100% !important;
+    // width: 100% !important;
   }
 }
 

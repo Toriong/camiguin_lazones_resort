@@ -64,7 +64,7 @@ function IntroPicsSec() {
           )
         })}
         <div className="overlay position-absolute w-100 h-100 flicker" />
-        <section className="w-50 mt-md-0 mt-5 pt-3 pt-md-0 introPicTxt d-flex  flex-column pt-0 pt-lg-4 position-relative">
+        <section className="w-50 mt-md-0 mt-5 pt-3 pt-md-0 introPicTxt d-flex flex-column pt-0 pt-lg-4 position-relative">
           <section className="position-relative">
             <HiAnimations />
           </section>
@@ -73,15 +73,24 @@ function IntroPicsSec() {
               key={introPicTxtId}
               className="text-white introPicHeading text-nowrap text-md-start d-flex justify-content-center align-items-center justify-content-md-start align-center-md-stretch"
             >
-              {pics[currentPicIndex].picTxts.map((text, index) => {
-                const key = uuidv4();
+              <span className="w-100 h-100 d-none d-md-flex">
+                {pics[currentPicIndex].picTxts.map((text, index) => {
+                  const key = uuidv4();
 
-                return (
-                    <p key={key} className={`slideRight w-fitContent text-center text-md-start headerTxtIntroPics d-none d-md-block ${index !== 0 ? 'ms-md-4' : ''}`}>
+                  return (
+                    <p key={key} className={`slideRight w-fitContent text-start headerTxtIntroPics ${index !== 0 ? 'ms-md-4' : ''}`}>
                       {text}
                     </p>
-                );
-              })}
+                  );
+                })}
+              </span>
+              {
+                <span className="w-100 h-100 d-md-none slideRight text-center">
+                  {(pics[currentPicIndex].picTxts.length === 1) && pics[currentPicIndex].picTxts[0]}
+                  {(pics[currentPicIndex].picTxts.length === 2) && `${pics[currentPicIndex].picTxts[0]} ${pics[currentPicIndex].picTxts[1]}`}
+                  {(pics[currentPicIndex].picTxts.length === 3) && `${pics[currentPicIndex].picTxts[0]} ${pics[currentPicIndex].picTxts[1]} ${pics[currentPicIndex].picTxts[2]}`}
+                </span>
+              }
             </h1>
           </section>
           <section className="position-relative w-100 mt-3 introPicTxtSec">
