@@ -2,6 +2,12 @@
     // bottom: 120px;
     opacity: .95 !important;
     z-index: 1000000000;
+
+    @media(max-width: 575px){
+        margin-top: 30px !important;
+        height: 65px !important;
+        width: 214px !important;
+    }
 }
 
 .makeReservationBtnStyles:hover{

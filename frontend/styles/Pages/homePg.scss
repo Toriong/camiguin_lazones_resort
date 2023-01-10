@@ -53,6 +53,12 @@
   @media(max-width: 767px){
     font-size: 55px !important;
   }
+
+  @media(max-width: 575px){
+    min-width: 100vw !important;
+    font-size: 38px !important;
+    // height: 150px !important;
+  }
 }
 
 .txtSpan {
@@ -67,7 +73,14 @@
   @media(max-width: 767px){
     font-size: 18px !important;
     min-width: 383px !important;
-    // border: solid pink !important;
+  }
+
+  @media(max-width: 575px){
+    font-size: 16px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-width: 100vw !important;
   }
 }
 
@@ -162,7 +175,12 @@
 }
 
 .introPicTxtInnerSec {
-  height: 100px;
+  @media (min-width: 576px){
+    height: 100px;
+  }
+  @media(max-width: 575px){
+    min-width: 100vw !important;
+  }
 }
 
 .roomsMainSec,

@@ -64,11 +64,11 @@ function IntroPicsSec() {
           )
         })}
         <div className="overlay position-absolute w-100 h-100 flicker" />
-        <section className="w-50 mt-md-0 mt-5 pt-3 pt-md-0 introPicTxt d-flex flex-column pt-0 pt-lg-4 position-relative">
+        <section className="w-50 mt-md-0 mt-5 pt-3 pt-md-0 introPicTxt d-flex flex-column justify-content-md-start justify-content-center align-items-md-stretch align-items-center pt-0 pt-lg-4 position-relative">
           <section className="position-relative">
             <HiAnimations />
           </section>
-          <section className="position-relative w-100 introPicTxtInnerSec mt-5 pt-3">
+          <section className="position-relative w-100 introPicTxtInnerSec mt-5 pt-sm-3">
             <h1
               key={introPicTxtId}
               className="text-white introPicHeading text-nowrap text-md-start d-flex justify-content-center align-items-center justify-content-md-start align-center-md-stretch"
@@ -85,7 +85,7 @@ function IntroPicsSec() {
                 })}
               </span>
               {
-                <span className="w-100 h-100 d-md-none slideRight text-center">
+                <span className="w-100 h-100 d-flex justify-content-center align-items-center d-md-none slideRight text-center">
                   {(pics[currentPicIndex].picTxts.length === 1) && pics[currentPicIndex].picTxts[0]}
                   {(pics[currentPicIndex].picTxts.length === 2) && `${pics[currentPicIndex].picTxts[0]} ${pics[currentPicIndex].picTxts[1]}`}
                   {(pics[currentPicIndex].picTxts.length === 3) && `${pics[currentPicIndex].picTxts[0]} ${pics[currentPicIndex].picTxts[1]} ${pics[currentPicIndex].picTxts[2]}`}
@@ -93,7 +93,7 @@ function IntroPicsSec() {
               }
             </h1>
           </section>
-          <section className="position-relative w-100 mt-3 introPicTxtSec">
+          <section className="position-relative w-100 mt-sm-3 introPicTxtSec">
             <span className="text-white infoTxtP text-center text-md-start slideUp position-absolute" key={infoTxtId}>{pics[currentPicIndex].infoTxt}</span>
           </section>
           <section className="position-relative w-100 d-flex justify-content-center align-items-center btnContainerIntroPics">
