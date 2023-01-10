@@ -20,12 +20,6 @@ function NavBar() {
                         <section className="logoSec ms-5 ps-lg-2 d-none d-md-flex justify-content-center align-items-center h-100 pb-2">
                             <Image src="/imgs/logo.png" alt="camiguin_lazones_resort_logo" width={100} height={100} layout="fixed" className="rounded-circle border" />
                         </section>
-                        {/* <section className="w-25 border">
-                            <div className="bg-secondary position-relative rounded sideBarNavBtn w-25">
-                                <div className="line bg-light w-75 position-absolute rounded"/>
-                                <div className="line bg-light w-75 position-absolute rounded mt-2"/>
-                            </div>
-                        </section> */}
                         <section className="d-flex flex-column flex-sm-column logoContainerNav justify-content-center align-items-center d-md-none ms-md-3 pt-sm-0 pb-sm-0 pb-5 pt-1">
                             <section className="titleNav justify-content-center align-items-center">
                                 <h1 className="text-dark display-6 text-center titleNavHeader d-none d-sm-flex d-md-none text-nowrap">

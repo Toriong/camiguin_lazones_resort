@@ -50,7 +50,7 @@ function IntroPicsSec() {
 
   return (
     <section className="row noMargin noPadding introPicsSec flex-nowrap">
-      <section className="border-bottom col-12 border noPadding noMargin introPicsSubSec position-relative d-flex justify-content-center align-items-center">
+      <section className="border-bottom col-12 border noPadding noMargin introPicsSubSec position-relative d-flex flex-column justify-content-start justify-content-md-center align-items-center">
         {pics.map(pic => {
           const { path, isOnUI } = pic
           const _className = isOnUI ? "w-100 h-100 position-absolute flicker" : "w-100 h-100 position-absolute flicker d-none"
@@ -64,28 +64,28 @@ function IntroPicsSec() {
           )
         })}
         <div className="overlay position-absolute w-100 h-100 flicker" />
-        <section className="w-50 introPicTxt d-flex flex-column pt-0 pt-lg-4 position-relative">
+        <section className="w-50 mt-md-0 mt-5 pt-3 pt-md-0 introPicTxt d-flex  flex-column pt-0 pt-lg-4 position-relative">
           <section className="position-relative">
             <HiAnimations />
           </section>
           <section className="position-relative w-100 introPicTxtInnerSec mt-5 pt-3">
             <h1
               key={introPicTxtId}
-              className="text-white introPicHeading text-nowrap d-flex"
+              className="text-white introPicHeading text-nowrap text-md-start d-flex justify-content-center align-items-center justify-content-md-start align-center-md-stretch"
             >
               {pics[currentPicIndex].picTxts.map((text, index) => {
                 const key = uuidv4();
 
                 return (
-                  <p key={key} className={`slideRight w-fitContent ${index !== 0 ? 'ms-4' : ''}`}>
-                    {text}
-                  </p>
+                    <p key={key} className={`slideRight w-fitContent text-center text-md-start headerTxtIntroPics d-none d-md-block ${index !== 0 ? 'ms-md-4' : ''}`}>
+                      {text}
+                    </p>
                 );
               })}
             </h1>
           </section>
           <section className="position-relative w-100 mt-3 introPicTxtSec">
-            <span className="text-white infoTxtP slideUp position-absolute" key={infoTxtId}>{pics[currentPicIndex].infoTxt}</span>
+            <span className="text-white infoTxtP text-center text-md-start slideUp position-absolute" key={infoTxtId}>{pics[currentPicIndex].infoTxt}</span>
           </section>
           <section className="position-relative w-100 d-flex justify-content-center align-items-center btnContainerIntroPics">
             <MakeReservation buttonKeyForRerender={uuidv4()} />

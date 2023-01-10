@@ -6,6 +6,10 @@
   @media(min-width: 768px) and (max-width: 991px){
     height: 820px !important;
   }
+
+  @media(max-width: 767px){
+    height: 715px !important;
+  }
 }
 
 .introPicTxt {
@@ -23,10 +27,19 @@
   }
 }
 
+.hiAnimationTxt{
+  @media(max-width: 767px){
+    top: 50% !important;
+    left: 50% !important;
+  }
+}
+
 .hiTxt {
   width: 250px !important;
-  // transform: translate(370px, 100px);
-  // border: solid pink !important;
+  @media(max-width: 767px){
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .introPicHeading {
@@ -36,6 +49,10 @@
   // border: solid pink;s
   font-weight: 500;
   font-family: Roboto !important;
+
+  @media(max-width: 767px){
+    font-size: 55px !important;
+  }
 }
 
 .txtSpan {
@@ -46,6 +63,10 @@
 .infoTxtP {
   font-weight: 400;
   font-size: 21px;
+
+  @media(max-width: 767px){
+    font-size: 18px !important;
+  }
 }
 
 .circleBtn {

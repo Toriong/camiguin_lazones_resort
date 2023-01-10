@@ -14,17 +14,29 @@
   transition: ease 1000ms;
 }
 
+
+
 .introPicTxtSec{
   height: 500px !important;
-  
+
+  @media (max-width: 767px) {
+    height: 400px !important;
+  }
+}
+
+
+
+.headerTxtIntroPics{
   // border: solid pink !important;
+
+  @media(max-width: 767px){
+    width: 100% !important;
+  }
 }
 
 .introPicsBtnSlideLeft{
-  // transform: translate(-150px, -50%) !important;
   opacity: 0;
   transform: translateX(-125px);
-  // border: solid pink !important;
   animation: slideLeft 2s forwards !important;
 }
 

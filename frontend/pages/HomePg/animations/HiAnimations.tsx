@@ -19,7 +19,7 @@ function HiAnimations(){
         return () => { clearInterval(intervalTimer); }
     }, [currentHiTxtIndex]);
 
-    return <h3 key={txtKey} className="top-0 start-0 position-absolute mt-2 me-5 text-white hiTxt flickerFaster display-6 largerFontSize heavyFontWeight">{HI_TEXTS[currentHiTxtIndex]}<span>👋</span>!</h3>
+    return <h3 key={txtKey} className="top-md-0 start-md-0 hiAnimationTxt position-absolute mt-2 me-md-5 text-white hiTxt flickerFaster display-6 largerFontSize heavyFontWeight">{HI_TEXTS[currentHiTxtIndex]}<span>👋</span>!</h3>
 }
 
 export default HiAnimations
