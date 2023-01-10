@@ -36,15 +36,12 @@ const Home: NextPage = () => {
 
 
           {/* this section will contain all of the rooms that the user can choose from */}
-          <section className='row ps-5 pe-5 mt-5'>
+          <section className='row d-flex justify-content-center align-items-center justify-content-sm-start align-items-sm-stretch d-sm-block ps-sm-5 pe-sm-5 mt-5'>
             <section className="col-12 homePgInfoSec ourRoomsSec shadow">
               <section className="w-100 d-flex justify-content-center align-items-center pt-3">
                 <h3 className="display-3 d-flex">
-                  <span className="fst-italic">
-                    Enjoy Your Stay With Us
-                  </span>
-                  <span className='ms-2 d-block'>
-                    🏠!
+                  <span className="fst-italic d-flex justify-content-center align-items-center smallerHeader">
+                    Enjoy Your Stay With Us 🏠!
                   </span>
                 </h3>
               </section>

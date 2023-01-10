@@ -18,8 +18,8 @@ const Room: React.FC<Props> = ({ alt, src, description, title, index }) => {
     const isSecondOrLastPic = (index === 1) || (index === 3)
 
     return (
-        <li className={`d-inline-block liCardContainer d-flex justify-content-center align-items-center ${isSecondOrLastPic ? 'mt-3' : ''}`}>
-            <Card style={{ width: '65%' }} className="shadow">
+        <li className={`d-inline-block liCardContainer d-flex justify-content-center align-items-center ${isSecondOrLastPic ? 'cardRoomSpacingRow' : ''}`}>
+            <Card className="shadow cardStyles">
                 <Img variant="top" src={src as string} alt={alt as string} />
                 <Body>
                     <Title>{title}</Title>

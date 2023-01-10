@@ -227,6 +227,10 @@
 
 .roomsList {
   column-count: 2;
+
+  @media(max-width: 1023px){
+    column-count: 1;
+  }
 }
 
 .homePgInfoSec {
@@ -253,6 +257,10 @@
 
 .ourRoomsSec {
   height: fit-content;
+  @media(max-width: 575px){
+    width: 80% !important;;
+    min-width: 260px !important;
+  }
 }
 
 .reviewsCard {
@@ -284,4 +292,49 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+
+@media(min-width: 1024px){
+  .cardRoomSpacingRow{
+    margin-top: 20px !important
+  }
+}
+
+@media(max-width: 1023px){
+
+  .liCardContainer:not(:first-child){
+    margin-top: 20px !important;
+  }
+
+  .card-title{
+    text-align: center;
+  }
+
+  .card-text{
+    text-align: center;
+  }
+}
+
+
+.cardStyles{
+  @media(min-width: 1024px){
+    width: 65% !important;
+  }
+
+  @media(max-width: 1023px){
+    width: 60% !important;
+
+    .cardStyles:not(:first-child){
+      margin-top: 20px;
+    }
+  }
+
+  @media(min-width: 768px) and (max-width: 1023px){
+   
+  }
+
+  @media(max-width: 575px){
+    min-width: 240px !important;
+  }
 }

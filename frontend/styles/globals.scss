@@ -145,6 +145,12 @@ li{
   }
 }
 
+.smallerHeader{
+  @media(max-width: 767px){
+    font-size: 30px!important;
+  }
+}
+
 .curve {
   position: absolute;
   height: 250px;
