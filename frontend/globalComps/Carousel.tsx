@@ -93,7 +93,7 @@ function Carousel({ reviews }: CarouselProps) {
                     })}
                 </div>
                 <section className='d-flex flex-column justify-content-center align-items-center pb-1 mt-sm-0'>
-                    <section className="w-100 d-flex justify-content-center align-items-center">
+                    <section className="w-100 d-flex justify-content-center align-items-center pt-3 pt-sm-0">
                         {BULL_POINT_INDEX_NUMS.map((num, _index) => (
                             (num === index) ? <BsCircleFill className="text-dark ms-1" key={_index} /> : <BsCircle key={_index} className="text-dark ms-1" onClick={() => { handleBulletPtClick(num) }} />
                         ))}

@@ -50,13 +50,13 @@ const Home: NextPage = () => {
               </section>
             </section>
           </section>
-          <section className='row ps-5 pe-5 mt-5 pb-5'>
+          <section className="row ps-sm-5 pe-sm-5 mt-5 pb-5 d-flex justify-content-center align-items-center">
             <section className="col-12 pitchSec shadow pb-5">
               <section className='pt-2'>
                 <Logo width={100} height={100} />
               </section>
               <section className="titleSecPitchSec w-100 d-flex justify-content-center align-items-center pt-3">
-                <h3 className="display-3 fst-italic">Why choose us?</h3>
+                <h3 className="display-3 fst-italic text-center">Why choose us?</h3>
               </section>
               <section className="pitchTxtSec w-100 d-flex justify-content-center align-items-center pt-4">
                 <p className="display-6 text-center ps-4 pe-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia veniam unde quos natus culpa eligendi, ducimus, perferendis, tenetur qui quis dignissimos sapiente nulla aperiam sint similique vitae laudantium exercitationem. Sequi numquam quibusdam error voluptate reprehenderit magni impedit id adipisci ullam doloremque sit nisi deserunt necessitatibus veniam, quam incidunt placeat iste!</p>

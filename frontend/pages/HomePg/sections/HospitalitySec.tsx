@@ -62,7 +62,7 @@ const HospitalitySec = () => {
                         </i>
                     </span>
                 </div>
-                <div className="makeReservationDiv fs-larger w-100 h-100 d-flex justify-content-center align-items-center" key={btnContainerId}>
+                <div className="makeReservationDiv fs-larger w-100 h-100 d-flex justify-content-center align-items-center  mt-sm-0" key={btnContainerId}>
                     <MakeReservation btnTxt={"BOOK NOW!"} isPulsing isSlideUp />
                 </div>
             </Parallax>

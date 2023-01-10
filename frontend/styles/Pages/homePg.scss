@@ -88,6 +88,7 @@
     justify-content: center !important;
     align-items: center !important;
     min-width: 100vw !important;
+    padding: 10px 5px 0px 5px !important;
   }
 }
 
@@ -225,6 +226,13 @@
   background: $card-color;
 }
 
+.pitchSec{
+  @media(max-width: 575px){
+    width: 80% !important;;
+    min-width: 260px !important;
+  }
+}
+
 .roomsList {
   column-count: 2;
 
@@ -280,7 +288,6 @@
     width: 80%!important;
     min-width: 260px!important;
   }
-  // height: 600px !important;
 }
 
 .roomMainSec {
@@ -363,3 +370,12 @@
   justify-content: center;
   align-items: center;
 }
+
+.mapImg{
+  width: 75% !important;
+  @media(max-width: 575px){
+    width: 90% !important;
+    height: 200px !important;
+  }
+}
+
