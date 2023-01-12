@@ -15,7 +15,7 @@ function NavBar() {
     return (
         <div className="unfixed-wrapper">
             <nav className="navbar navbarStyles navbar-expand basis navbar-light bg-light position-fixed w-100 pt-5 pb-5 border-bottom">
-                <div className="collapse navbar-collapse h-100 position-absolute w-100" id="navbarNav">
+                <div className="collapse navbar-collapse h-100 position-absolute w-100 navbarSubcontainer" id="navbarNav">
                     <div className="position-relative w-100 h-100 pt-1 d-flex flex-row-reverse flex-sm-row justify-content-sm-between">
                         <section className="logoSec ms-5 ps-lg-2 d-none d-md-flex justify-content-center align-items-center h-100 pb-2">
                             <Image src="/imgs/logo.png" alt="camiguin_lazones_resort_logo" width={100} height={100} layout="fixed" className="rounded-circle border" />

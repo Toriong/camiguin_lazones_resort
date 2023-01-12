@@ -40,7 +40,7 @@ const Home: NextPage = () => {
             <section className="col-12 homePgInfoSec ourRoomsSec shadow">
               <section className="w-100 d-flex justify-content-center align-items-center pt-3">
                 <h3 className="display-3 d-flex">
-                  <span className="fst-italic d-flex justify-content-center align-items-center smallerHeader">
+                  <span className="fst-italic d-flex justify-content-center align-items-center smallerHeader text-center">
                     Enjoy Your Stay With Us 🏠!
                   </span>
                 </h3>

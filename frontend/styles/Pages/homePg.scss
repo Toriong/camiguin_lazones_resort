@@ -168,6 +168,7 @@
 
 .homePage{
   // width: fit-content !important;
+  max-width: 2560px !important;
   overflow: hidden !important;;
    *{
     // border: solid pink !important;
@@ -341,6 +342,7 @@
 
 
 .cardStyles{
+  max-width: 817px !important;
   @media(min-width: 1024px){
     width: 65% !important;
   }
