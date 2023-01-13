@@ -25,7 +25,7 @@ def createNewUser(request):
             isMale = True if (isMale.lower() == "true") else False
 
         # newUser = User.create(isMale, birthDate, fromCity, fromCountry, password)
-        newUser = User.objects.create_user(firstName=firstName, lastName=lastName, fromCity=fromCity, fromCountry=fromCountry, email=email, password=password, date_of_birth=birthDate)
+        newUser = User.createUser(first_name=firstName, last_name=lastName, email=email, from_city=fromCity, from_country=fromCountry, birth_date=birthDate, isMale=isMale, email_field=email, password=password)
 
         print("newUser: ", newUser)
 
