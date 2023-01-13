@@ -10,5 +10,7 @@ def testConnection(request):
 def createUser(request):
     print("request: ", request)
 
+    
+
 
     return HttpResponse("Request does not have a name.")
