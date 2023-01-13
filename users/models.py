@@ -1,36 +1,19 @@
-# users/models.py
-
-from django.contrib.auth.models import AbstractUser
 from django.db import models
-from django.utils import timezone
-from .manager import UserManager
+from django.contrib.auth.models import AbstractUser
+from django.conf import settings 
+from django.contrib.auth.models import User
 
-class User(AbstractUser):
-    username = None # remove username field, we will use email as unique identifier
-    email = models.EmailField(unique=True, null=True, db_index=True)
-    is_active = models.BooleanField(default=False)
-    is_staff = models.BooleanField(default=False)
-    date_joined = models.DateTimeField(default=timezone.now)
 
-    REQUIRED_FIELDS = []
-    USERNAME_FIELD = 'email'
-
-    objects = UserManager()
+# class AuthenticatedUser(AbstractUser):
+    # pass
 
 
 class Member(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True,related_name="user_profile")
-    phoneNum = models.CharField(max_length=255,blank=True,null=True)
-    password = models.CharField(max_length=255)
-    email = models.CharField(max_length=255, unique=True)
-    is_verified = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    is_anonymous = models.BooleanField(default=False)
-    is_authenticated = models.BooleanField(default=True)
-
-    REQUIRED_FIELDS = ['password']
-    USERNAME_FIELD = 'email'
-
-    def __str__(self):
-        return self.user.email
+    # email = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    email = models.ForeignKey(User, on_delete=models.CASCADE) 
+    birth_date = models.DateField(default=None, null=True)
+    from_city = models.CharField(max_length=100, default="")
+    from_country = models.CharField(max_length=100, default="")
+    referral_count_num = models.IntegerField(default=0)
+    isMale = models.BooleanField(default=True)
+    phone_num = models.CharField(max_length=50)
