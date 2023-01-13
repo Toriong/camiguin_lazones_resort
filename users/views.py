@@ -17,18 +17,21 @@ def createNewUser(request):
     isMale = request.POST.get('isMale')
     fromCountry = request.POST.get('fromCountry')
     birthDate = request.POST.get('birthDate')
+    password = request.POST.get('password')
     isUserInfoPresent = firstName and lastName and email and fromCity and fromCountry and birthDate
     
     if (request.method == "POST") and isUserInfoPresent:
         if (type(isMale) == 'string'):
             isMale = True if (isMale.lower() == "true") else False
 
-        newUser = User.create(isMale, birthDate, fromCity, fromCountry)
+        # newUser = User.create(isMale, birthDate, fromCity, fromCountry, password)
+        newUser = User.objects.create_user(firstName=firstName, lastName=lastName, fromCity=fromCity, fromCountry=fromCountry, email=email, password=password, date_of_birth=birthDate)
 
-        print('newUser: ', newUser)
+        print("newUser: ", newUser)
+
 
         try:
-            newUser.save()
+            User.save(newUser)
             print("User successfully created.")
             return HttpResponse("User was saved into the database.")
         except Exception as error:
