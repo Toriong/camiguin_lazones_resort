@@ -15,13 +15,10 @@ class MyUserManager(BaseUserManager):
 
         user = self.model(
             email=self.normalize_email(email),
-            password=password,
-            date_of_birth=date_of_birth,
+            date_of_birth=date_of_birth
         )
-        print('user: ', user)
         user.set_password(password)
-        # user.save(using=self._db)
-        user.save()
+        user.save(using=self._db)
         return user
 
     def create_superuser(self, email, date_of_birth, password=None):

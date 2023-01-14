@@ -16,11 +16,12 @@ def signIn(request):
     print("request: ", request)
 
     if request.GET and (request.GET.get('email') and request.GET.get('password')):
-        user = authenticate(request, email=request.GET.get('email'), password="simba1997")
+        user = authenticate(request, email=request.GET.get('email'), password=request.GET.get('password'))
 
-        print(user)
+        print("user: ", user)
 
         if user is not None:
+            print("user: ", user)
             login(request, user)
         else:
             print("")
@@ -35,6 +36,11 @@ def createUser(request):
 
     if request.POST and (request.POST.get('name') == 'createUser'):
         email = request.POST.get('email')
+
+        if User.objects.get(email=email):
+            print("The email was taken already.")
+            return HttpResponse("There is an account with that email already.", status=409)
+
         password = request.POST.get('password')
         firstName = request.POST.get('firstName')
         lastName = request.POST.get('lastName')
@@ -47,7 +53,8 @@ def createUser(request):
 
         if isAllUserInfoPresent:
             try:
-                User.objects.create(email=email, date_of_birth=birthDate, password=make_password(password)) 
+                user = User.objects.create_user(email=email, date_of_birth=birthDate, password=password) 
+                print("user after creation: ", user)
                 newUser = User.objects.get(email=email)
                 newUser.first_name = firstName
                 newUser.last_name = lastName
@@ -59,7 +66,7 @@ def createUser(request):
 
                 return HttpResponse("User was created successfully.")
             except Exception as error:
-                print("An error occurred while saving the user into the database: " + error)
+                print("An error occurred while saving the user into the database: ", error)
                 return HttpResponse("User info may not have been saved. Have client refresh the page.", status=404)
         else:
             return HttpResponse("Did not receive an email, password, first name, or a last name.", status=404)
