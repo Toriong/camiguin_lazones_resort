@@ -2,11 +2,32 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.hashers import make_password
+from django.contrib.auth import authenticate, login
 from .models import User
 
 # Create your views here.
+
+
 def testConnection(request):
     return HttpResponse("Sever is live on PORT: 8000")
+
+
+def signIn(request):
+    print("request: ", request)
+
+    if request.GET and (request.GET.get('email') and request.GET.get('password')):
+        user = authenticate(request, email=request.GET.get('email'), password="simba1997")
+
+        print(user)
+
+        if user is not None:
+            login(request, user)
+        else:
+            print("")
+
+
+    return HttpResponse("Invalid parameters.", status=404)
+        
 
 @csrf_exempt 
 def createUser(request):
@@ -22,7 +43,6 @@ def createUser(request):
         fromCountry = request.POST.get('fromCountry')
         sex = request.POST.get('sex')
         phoneNum = request.POST.get('phoneNum')
-        print(email, password, firstName, lastName, birthDate, phoneNum, fromCity, fromCountry, sex)
         isAllUserInfoPresent = (email and password and firstName and lastName and birthDate and phoneNum and fromCity and fromCountry and sex)
 
         if isAllUserInfoPresent:

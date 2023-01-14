@@ -19,8 +19,9 @@ class MyUserManager(BaseUserManager):
             date_of_birth=date_of_birth,
         )
         print('user: ', user)
-        # user.set_password(password)
-        user.save(using=self._db)
+        user.set_password(password)
+        # user.save(using=self._db)
+        user.save()
         return user
 
     def create_superuser(self, email, date_of_birth, password=None):
@@ -86,19 +87,3 @@ class User(AbstractBaseUser):
         "Is the user a member of staff?"
         # Simplest possible answer: All admins are staff
         return self.is_admin
-
-
-
-
-# class Member(models.Model):
-#     user = models.OneToOneField(User, on_delete=models.CASCADE)
-#     birth_date = models.DateField(default=None, null=True)
-#     from_city = models.CharField(max_length=100, default="")
-#     from_country = models.CharField(max_length=100, default="")
-#     referral_count_num = models.IntegerField(default=0)
-#     is_male = models.BooleanField(default=True)
-#     phone_num = models.CharField(max_length=50)
-
-#     @classmethod
-#     def create(cls, birth_date, from_city, from_country, referral_count_num, is_male, phone_num):
-#         return cls(birth_date=birth_date,from_city=from_city,from_country=from_country, referral_count_num=referral_count_num, is_male=is_male, phone_num=phone_num)
