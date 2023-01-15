@@ -1,18 +1,21 @@
+import { ReduxStore } from 'globalInterfaces/interfaces';
 import { useState } from 'react';
 import Calendar from 'react-calendar';
 import { useSelector, useDispatch } from 'react-redux';
-import { dates } from '../../../redux/stayDates'
 
-interface Props{
+
+interface Props {
     isOnStartDate?: boolean
+    isOnGuestsNum?: boolean
 }
 
-function DateInputField({ isOnStartDate }:Props) {
+function DateInputField({ isOnStartDate, isOnGuestsNum }: Props) {
     const [isCalenderOn, setIsCalenderOn] = useState(false)
+    const stayDates = useSelector((state: ReduxStore) => ({ startDate: state.startDate, endDate: state.endDate }))
 
     return (
         <div>
-            <span>{isOnStartDate ? dates.getInitialState().startDate : dates.getInitialState().endDate }</span>
+            {!!isOnGuestsNum && <span>{isOnStartDate ? stayDates.startDate : stayDates.endDate}</span>}
         </div>
 
     )

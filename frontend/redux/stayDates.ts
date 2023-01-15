@@ -1,15 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../store'
 import moment from 'moment'
+import { Dates, Trip } from 'globalInterfaces/interfaces'
 
 // Define a type for the slice state
 
 
 
-interface Dates {
-    startDate: string
-    endDate: string
-}
+
 
 interface PayloadActionCustom {
     date: string
@@ -17,13 +15,15 @@ interface PayloadActionCustom {
 }
 
 // Define the initial state using that type
-const initialState: Dates = {
+const initialState: Trip = {
     startDate: moment().format("YYYY-MM-DD"),
     endDate: moment().format("YYYY-MM-DD"),
+    adultsNum: 0,
+    childrenNum: 0   
 }
 
 export const dates = createSlice({
-    name: 'stayDates',
+    name: 'trip',
     // `createSlice` will infer the state type from the `initialState` argument
     initialState,
     reducers: {
@@ -37,8 +37,5 @@ export const dates = createSlice({
 
 export const { updateDate } = dates.actions
 
-
-// Other code such as selectors can use the imported `RootState` type
-export const datesState = (state: RootState) => state
 
 export default dates.reducer

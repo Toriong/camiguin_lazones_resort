@@ -5,7 +5,8 @@ import DateInputField from './DateInputField'
 
 function MakeReservationInputs() {
     const HEADER_TITLES = ['ARRIVAL', 'DEPARTURE', 'ADULTS', 'CHILDREN', 'CODE']
-    const INPUT_FIELDS = [<DateInputField key={1} isOnStartDate/>, <DateInputField key={2} />]
+    const inputSecs = [{ title: 'ARRIVAL', comp: <DateInputField key={1} isOnStartDate/> }, { title: 'DEPARTURE', comp: <DateInputField key={2} /> }, { title: 'ADULTS',  } ]
+    
 
     return (
         <div className="d-flex flex-column w-100 mt-5">
@@ -16,8 +17,6 @@ function MakeReservationInputs() {
                             <h6 className="w-100 ps-2">{title}</h6>
                         </div>
                     )}
-                </section>
-                <section className="w-100 d-flex">
                 </section>
             </section>
             <section className="w-100 d-flex justify-content-end pe-4">
