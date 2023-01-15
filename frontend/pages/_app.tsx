@@ -1,6 +1,7 @@
 import '../styles/globals.scss'
 import "../styles/navbar.scss"
 import "../styles/Pages/homePg.scss"
+import "../styles/Pages/reservations.scss"
 import "../styles/Features/ReviewsCarousel.scss"
 import "../styles/Buttons/buttonStyles.scss"
 import "../styles/globalComps.scss"

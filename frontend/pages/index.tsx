@@ -33,9 +33,6 @@ const Home: NextPage = () => {
           <IntroPicsSec />
           <IntroToReviews />
           <HospitalitySec />
-
-
-          {/* this section will contain all of the rooms that the user can choose from */}
           <section className='row d-flex justify-content-center align-items-center justify-content-sm-start align-items-sm-stretch d-sm-block ps-sm-5 pe-sm-5 mt-5'>
             <section className="col-12 homePgInfoSec ourRoomsSec shadow">
               <section className="w-100 d-flex justify-content-center align-items-center pt-3">
@@ -63,11 +60,6 @@ const Home: NextPage = () => {
               </section>
             </section>
           </section>
-          {/* row ps-5 pe-5 mt-5 pb-5 */}
-          {/* d-flex justify-content-center align-items-sm-start align-items-center justify-content-sm-start */}
-          {/* d-flex justify-content-center align-items-center */}
-          {/* d-flex justify-content-center align-items-center */}
-          {/* d-flex d-flex d-block justify-content-center justify-content-sm-start align-items-center align-items-sm-stretch */}
           <section className="row ps-sm-5 pe-sm-5 mt-5 pb-5 d-flex justify-content-center align-items-center">
             <section className="ourRoomsSec pt-4 reviewsMainSec justify-content-sm-start justify-content-center align-items-center align-items-sm-stretch w-100">
               <ReviewsCarousel reviews={Reviews} />
