@@ -24,6 +24,10 @@ export interface GuestsNum{
     childrenNum: number
 }
 
-export interface Trip extends Dates, GuestsNum{}
+export interface Coupon{
+    couponCode: string
+}
 
-export interface ReduxStore extends Dates, GuestsNum{}
+export interface Trip extends Dates, GuestsNum, Coupon{}
+
+export interface ReduxStore extends Dates, GuestsNum, Coupon{}

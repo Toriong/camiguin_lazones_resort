@@ -1,23 +1,25 @@
 import { ReduxStore } from 'globalInterfaces/interfaces';
 import { useState } from 'react';
-import Calendar from 'react-calendar';
 import { useSelector, useDispatch } from 'react-redux';
+import Calendar from 'react-calendar';
+import { FcCalendar } from 'react-icons/fc'
+import Button from 'react-bootstrap/Button'
+import { store } from '../../../store';
 
 
 interface Props {
     isOnStartDate?: boolean
-    isOnGuestsNum?: boolean
 }
 
-function DateInputField({ isOnStartDate, isOnGuestsNum }: Props) {
+function DateInputField({ isOnStartDate }: Props) {
     const [isCalenderOn, setIsCalenderOn] = useState(false)
-    const stayDates = useSelector((state: ReduxStore) => ({ startDate: state.startDate, endDate: state.endDate }))
+    const { startDate, endDate } = store.getState().trip
 
     return (
-        <div>
-            {!!isOnGuestsNum && <span>{isOnStartDate ? stayDates.startDate : stayDates.endDate}</span>}
+        <div className="d-flex justify-content-center align-items-center h-100 position-relative">
+            <span>{isOnStartDate ? startDate : endDate}</span>
+            <Button className="noBtnStyles"><FcCalendar/></Button>
         </div>
-
     )
 }
 

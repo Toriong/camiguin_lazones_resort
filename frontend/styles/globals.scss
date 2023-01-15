@@ -98,9 +98,13 @@ button:hover{
   text-decoration: underline !important;
 }
 
+input{
+  outline: none !important;;
+}
+
 .noBtnStyles{
-  background: none;
-  border: none;
+  background: none !important;
+  border: none !important;
 }
 
 .pulse {
