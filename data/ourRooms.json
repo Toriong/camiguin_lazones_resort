@@ -1,0 +1,26 @@
+[
+    {
+        "src": "imgs/bedImgs/family.jpeg",
+        "alt": "family_roo_camiguin_lanzones_resort",
+        "description": "",
+        "title": "Family Rooms"
+    },
+    {
+        "src": "imgs/bedImgs/premium2.jpeg",
+        "alt": "premium_room_camiguin_lanzones_resort",
+        "description": "",
+        "title": "Premium"
+    },
+    {
+        "src": "imgs/bedImgs/queen.jpeg",
+        "alt": "queen_room_camiguin_lanzones_resort",
+        "description": "",
+        "title": "Queen"
+    },
+    {
+        "src": "imgs/bedImgs/singleRoom.jpeg",
+        "alt": "single_Room_camiguin_lanzones_resort",
+        "description": "",
+        "title": "Single" 
+    }
+]

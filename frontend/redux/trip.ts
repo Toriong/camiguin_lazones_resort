@@ -31,11 +31,11 @@ export const trip = createSlice({
         // Use the PayloadAction type to declare the contents of `action.payload`
 
         // why is that setTrip doesn't update the Redux state
-        setTrip: (state, action: PayloadAction<PayloadActionCustom>) => {
+        setTrip: (state: Trip, action: PayloadAction<PayloadActionCustom>) => {
             const { data, field } = action.payload;
             state = { ...state, [field]: data }
         },
-        updateCoupon: (state, action: PayloadAction<string>) => {
+        updateCoupon: (state: Trip, action: PayloadAction<string>) => {
             state.couponCode = action.payload
         }
     },

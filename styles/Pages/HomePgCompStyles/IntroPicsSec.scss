@@ -1,0 +1,76 @@
+.imgCarousel {
+  display: inline-block;
+  height: 400px;
+  width: 100%;
+  border-radius: 40px;
+
+  @media (max-width: 575px) {
+    height: fit-content;
+  }
+}
+
+.imgCarouselSlider {
+  white-space: nowrap;
+  transition: ease 1000ms;
+}
+
+
+
+.introPicTxtSec{
+  height: 500px !important;
+
+  @media (max-width: 767px) {
+    height: 400px !important;
+    // border: solid green !important;
+    min-width: 383px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 100vw !important;
+  }
+}
+
+
+
+.headerTxtIntroPics{
+  // border: solid pink !important;
+
+  @media(max-width: 767px){
+    // width: 100% !important;
+  }
+}
+
+.introPicsBtnSlideLeft{
+  opacity: 0;
+  transform: translateX(-125px);
+  animation: slideLeft 2s forwards !important;
+}
+
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+  }
+  25%{
+    opacity: .2;
+  }
+  50%{
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.btnContainerIntroPics{
+  // border: solid pink !important;
+  height: 200px !important;
+  button{
+    @media (min-width: 1140px){
+      top: -5% !important;
+
+    }
+    // transform: translate(-50%, -50%);
+    // left: 50% !important;
+  }
+}
